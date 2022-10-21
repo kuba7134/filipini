@@ -1,0 +1,124 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+  color: white;
+  background-color: var(--color-nav);
+  height: 150px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0px 0px 10px 5px black;
+}
+
+.navbar-name {
+  margin: 1rem 1 rem;
+}
+
+.navbar-name h1 {
+  font-size: 1.5em;
+}
+
+.navbar-name h2 {
+  font-size: 1em;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6rem;
+  max-width: 1600px;
+  width: 100%;
+}
+
+.navbar-links-list {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  gap: 25px;
+}
+
+.navbar-links-logo {
+  padding-right: 2rem;
+  user-select: none;
+}
+
+.navbar-links-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.navbar-menu {
+  margin-left: 1rem;
+  display: none;
+}
+
+.navbar-menu svg {
+  cursor: pointer;
+  width: 27px;
+}
+
+.navbar-menu-container {
+  background-color: var(--color-nav);
+  display: flex;
+  gap: 30px;
+  font-size: larger;
+  align-items: flex-end;
+  flex-direction: column;
+  text-align: end;
+  padding: 2rem;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  min-width: 210px;
+  height: 100vh;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1300px) {
+  .navbar-name h1 {
+    font-size: 1em;
+  }
+
+  .navbar-name h2 {
+    font-size: 0.75em;
+  }
+}
+
+@media screen and (max-width: 1055px) {
+  .navbar-name h1 {
+    font-size: 1.5em;
+  }
+
+  .navbar-name h2 {
+    font-size: 1em;
+  }
+  .navbar-links-list {
+    display: none;
+  }
+
+  .navbar-menu {
+    display: flex;
+  }
+
+  .navbar-links {
+    padding: 1rem 3rem;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .navbar-links {
+    padding: 1rem 1rem;
+  }
+  .navbar-przy {
+    display: none;
+  }
+
+  .navbar-links-logo img {
+    width: 60px;
+    height: 60px;
+  }
+}

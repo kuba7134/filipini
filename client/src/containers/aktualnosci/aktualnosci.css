@@ -1,0 +1,19 @@
+.aktualnosci h1 {
+  font-size: 3rem;
+  font-family: "Marcellus", serif;
+}
+
+.aktualnosci {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 1rem;
+}
+
+.aktualnosci-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}

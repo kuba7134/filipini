@@ -1,0 +1,25 @@
+.single-news {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: var(--color-1);
+  color: white;
+  gap: 20px;
+  font-family: Oswald;
+  padding: 1rem;
+}
+
+.single-news-top {
+  display: flex;
+  gap: 20px;
+}
+
+.single-news-top h2 {
+  font-weight: 500;
+}
+
+.single-news-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}

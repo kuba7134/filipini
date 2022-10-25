@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./forms.css";
+import axios from "axios";
 
 const Forms = () => {
   const [post, setPost] = useState({
@@ -20,7 +21,24 @@ const Forms = () => {
 
   console.log(post);
 
-  const handleSubmit = () => {};
+  const handleSubmit = e => {
+    e.preventDefault();
+    // const formData = new FormData();
+    // formData.append("title", post.title);
+    // formData.append("img", post.img);
+    // formData.append("content", post.content);
+
+    // console.log(...formData);
+    // "http://localhost:8000/newpost";"http://httpbin.org/post"
+    axios
+      .post("http://localhost:8000/newpost", { title: "siema" })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="forms">

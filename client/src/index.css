@@ -1,15 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Oswald:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat&family=Oswald:wght@500&display=swap");
 :root {
-  --font-family: "Manrope", sans-serif;
+  --font-family: "Montserrat", sans-serif;
 
   --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
   --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
 
-  --color-bg: #ece4b7;
-  --color-footer: #031b34;
-  --color-text: #02020b;
-  --color-subtext: #ff8a71;
-  --color-nav: #895f32;
+  --color-bg: #eee6e6;
+  --color-footer: #5f5653;
+  --color-text: #000000;
+  --color-bg2: #983e3e;
   --color-1: #a97a72;
 }

@@ -1,12 +1,12 @@
 .homepage-tiles {
   display: flex;
-  background-color: var(--color-nav);
-  color: white;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   position: absolute;
   bottom: -100px;
   border-radius: 20px;
   box-shadow: 0px 3px 30px 10px black;
-  font-family: "Oswald", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .homepage-tile-single {
@@ -16,8 +16,8 @@
 }
 
 .homepage-tile-single img {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   display: block;
 }
@@ -31,9 +31,6 @@
 }
 
 .homepage-tile-single-img-box {
-  background-color: white;
-  padding: 0.3rem;
-  border-radius: 50%;
   overflow: hidden;
 }
 

@@ -1,0 +1,55 @@
+.content-hours-list-span {
+  display: inline-block;
+  width: 3rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 1rem;
+  font-size: 1.3em;
+}
+
+.content-hours {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 3rem;
+}
+
+.content-hours-title {
+  font-size: 1.4rem;
+}
+
+.content-hours-lists ul {
+  margin-left: 2rem;
+  list-style: disc;
+}
+
+.content-hours-lists {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1100px) {
+  .content-hours-lists {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .content-hours {
+    gap: 0px;
+  }
+
+  .content img {
+    width: 40%;
+    min-width: 270px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    flex-direction: column-reverse;
+  }
+}

@@ -2,6 +2,10 @@ import React from "react";
 import "./tiles.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import church from "../resources/church.png";
+import bible from "../resources/bible.png";
+import cup from "../resources/cup.png";
+import crowd from "../resources/crowd.png";
 
 const Tiles = () => {
   return (
@@ -11,7 +15,7 @@ const Tiles = () => {
           <div className="homepage-tile-single">
             <div className="homepage-tile-single-title">
               <div className="homepage-tile-single-img-box">
-                <img src="pics/icons/book.png"></img>
+                <img src={bible}></img>
               </div>
               <h2>AKTUALNOŚCI</h2>
             </div>
@@ -27,7 +31,7 @@ const Tiles = () => {
           <div className="homepage-tile-single">
             <div className="homepage-tile-single-title">
               <div className="homepage-tile-single-img-box">
-                <img src="pics/icons/church.png"></img>
+                <img src={church}></img>
               </div>
               <h2>PARAFIA</h2>
             </div>
@@ -43,7 +47,7 @@ const Tiles = () => {
           <div className="homepage-tile-single">
             <div className="homepage-tile-single-title">
               <div className="homepage-tile-single-img-box">
-                <img src="pics/icons/people.png"></img>
+                <img src={crowd}></img>
               </div>
               <h2>WSPÓLNOTY</h2>
             </div>
@@ -60,7 +64,7 @@ const Tiles = () => {
           <div className="homepage-tile-single">
             <div className="homepage-tile-single-title">
               <div className="homepage-tile-single-img-box">
-                <img src="pics/icons/bread.png"></img>
+                <img src={cup}></img>
               </div>
               <h2>SAKRAMENTY</h2>
             </div>

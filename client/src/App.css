@@ -7,6 +7,7 @@
 
 body {
   background-color: var(--color-bg);
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -24,6 +25,23 @@ ul {
 
 .section-margin {
   margin: 4rem 6rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.title h2 {
+  display: inline-block;
+}
+
+.title-separator {
+  height: 1px;
+  background-color: var(--color-footer);
+  margin-top: 6px;
+  margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 700px) {

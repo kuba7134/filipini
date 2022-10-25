@@ -2,6 +2,7 @@ import React from "react";
 import "./homepage.css";
 import Tiles from "./tiles/Tiles";
 import Slideshow from "./slideshow/Slideshow";
+import Content from "./content/Content";
 
 const Homepage = () => {
   return (
@@ -14,6 +15,7 @@ const Homepage = () => {
           <Tiles />
         </div>
       </div>
+      <Content />
     </div>
   );
 };

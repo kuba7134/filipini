@@ -1,0 +1,63 @@
+.sakramenty-slub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  row-gap: 3rem;
+  margin: 3rem;
+  justify-items: center;
+  max-width: 1500px;
+}
+
+.sakramenty-slub-tekst {
+  padding: 2rem;
+  max-width: 65ch;
+}
+
+.sakramenty-slub-tekst ul {
+  list-style: disc;
+  margin-left: 1rem;
+}
+
+.sakramenty-slub-bottom {
+  grid-row: 3 / 4;
+  grid-column: 1 / 3;
+  margin: auto;
+}
+
+@media screen and (max-width: 1100px) {
+  .sakramenty-slub img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+  }
+  .sakramenty-slub {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  .sakramenty-slub-tekst {
+    padding: 0;
+  }
+
+    #slub2 {
+    order: 1;
+  }
+  .sakramenty-slub-bottom {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sakramenty-slub img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+  }
+
+
+  .sakramenty-header h1 {
+    font-size: 1.2em;
+  }
+}

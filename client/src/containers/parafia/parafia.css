@@ -1,0 +1,21 @@
+.parafia-header {
+  background-image: url("./resources/inside.jpg");
+  background-position: bottom center;
+  padding-bottom: 20px;
+}
+
+.parafia-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+}
+.parafia-container img {
+  box-shadow: 15px 15px var(--color-bg2);
+  margin-bottom: 1rem;
+}
+
+.parafia-container > div {
+  margin: 1rem;
+}

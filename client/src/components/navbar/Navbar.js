@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = ({ kontaktRef }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
-
   let menuRef = useRef();
 
   useEffect(() => {
@@ -53,10 +52,11 @@ const Navbar = () => {
           Parafia
         </Link>
       </p>
-      <p>
-        <Link onClick={() => setToggleMenu(false)} to="/kontakt">
-          Kontakt
-        </Link>
+      <p onClick={() => {
+        setToggleMenu(false)
+        kontaktRef.current.scrollIntoView()
+      }}>
+        Kontakt
       </p>
     </>
   );

@@ -1,0 +1,17 @@
+.ksieza {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ksieza-single {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.ksieza-single img {
+  width: 245px;
+}

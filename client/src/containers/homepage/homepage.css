@@ -7,7 +7,7 @@
 }
 
 .homepage-header-container {
-  height: 800px;
+  height: 720px;
 }
 
 .homepage-img-container {
@@ -41,6 +41,9 @@
   .homepage-img-container {
     height: 350px;
   }
+  .homepage-header-container {
+    height: 650px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -50,5 +53,20 @@
   }
   .homepage-img-container {
     height: 250px;
+  }
+  .homepage-header-container {
+    height: 750px;
+  }
+}
+
+@media (max-width: 600px) {
+  .homepage-header-container {
+    height: 800px;
+  }
+}
+
+@media (max-width: 400px) {
+  .homepage-header-container {
+    height: 870px;
   }
 }

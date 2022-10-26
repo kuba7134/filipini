@@ -41,7 +41,7 @@ const Content = () => {
           <ul>
             <h3>Dni powszednie</h3>
             <li>
-              <span className="content-hours-list-span">07:00</span>
+              <span className="content-hours-list-span">7:00</span>
             </li>
             <li>
               <span className="content-hours-list-span">18:00</span>

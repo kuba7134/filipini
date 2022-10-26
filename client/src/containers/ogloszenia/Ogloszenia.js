@@ -1,6 +1,7 @@
 import React from "react";
 import "./ogloszenia.css";
 import { GiScrollUnfurled } from "react-icons/gi";
+import { Headerao } from "../../components";
 
 const single = {
   date: "16 X 2022",
@@ -22,10 +23,7 @@ const ogloszenia = [single, single, single, single, single];
 const Ogloszenia = () => {
   return (
     <div className="ogloszenia">
-      <h1>
-        Ogłoszenia
-        <GiScrollUnfurled />
-      </h1>
+      <Headerao title="Ogłoszenia"/>
       <div className="ogloszenia-container">
         <div className="ogloszenia-container-current">
           <div className="ogloszenia-container-current-top">

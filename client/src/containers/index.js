@@ -6,3 +6,4 @@ export { default as Aktualnosci } from "./aktualnosci/Aktualnosci";
 export { default as SingleNewsPage } from "./aktualnosci/singlenewspage/SingleNewsPage";
 export { default as Forms } from "./forms/Forms.js";
 export { default as Ogloszenia } from "./ogloszenia/Ogloszenia.js";
+export { default as Nabozenstwa } from "./nabozenstwa/Nabozenstwa"

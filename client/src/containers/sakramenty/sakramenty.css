@@ -10,13 +10,15 @@
   font-size: 2rem;
 }
 
+.sakramenty-header h1 {
+  margin-left: 3rem;
+}
+
 .sakramenty {
   margin-bottom: 2rem;
 }
 
-.sakramenty-header h1 {
-  margin-left: 3rem;
-}
+
 
 .sakramenty-buttons {
   display: flex;
@@ -76,5 +78,12 @@
   .sakramenty-buttons {
     padding: 2rem 1rem;
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sakramenty-header h1 {
+    font-size: 1.3em;
+    margin-left: 5px;
   }
 }

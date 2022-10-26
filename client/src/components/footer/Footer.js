@@ -1,11 +1,11 @@
-import React from "react";
 import "./footer.css";
-import maps from "./resources/maps.png";
 import { BsFillTelephoneFill, BsInstagram, BsFacebook } from "react-icons/bs";
 import { SiGooglemaps } from "react-icons/si";
-const Footer = () => {
+import { forwardRef } from "react";
+
+const Footer = forwardRef((props, ref) => {
   return (
-    <div className="footer">
+    <div ref={ref} className="footer">
       <div className="footer-basic">
         <h2>Parafia Świętej Rodziny</h2>
         <h3>
@@ -40,6 +40,6 @@ const Footer = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Footer;

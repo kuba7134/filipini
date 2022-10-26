@@ -1,4 +1,5 @@
 import React from "react";
+import { Headerao } from "../../components";
 import "./aktualnosci.css";
 import SingleNews from "./singlenews/SingleNews";
 
@@ -20,7 +21,7 @@ const temp = [...news, ...news, ...news, ...news, ...news, ...news];
 const Aktualnosci = () => {
   return (
     <div className="aktualnosci">
-      <h1>Aktualności</h1>
+      <Headerao title={"Aktualności"}/>
       <div className="aktualnosci-container">
         {temp.map(item => (
           <SingleNews news={item} key={item.id} />

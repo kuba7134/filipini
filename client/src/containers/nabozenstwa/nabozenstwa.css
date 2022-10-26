@@ -1,0 +1,27 @@
+.nabozenstwa-header {
+  background-image: url("./resources/cross.jpg");
+  background-position: top right;
+  padding-bottom: 200px;
+}
+
+.nabozenstwa-content {
+  max-width: 65ch;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+}
+
+.nabozenstwa-content h2 {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.nabozenstwa-content ul {
+  list-style: disc;
+  margin-left: 2rem;
+  margin-right: 0.5rem;
+}
+
+.nabozenstwa-content li {
+  padding: 0.5rem 0;
+}

@@ -15,7 +15,7 @@ const SingleNews = props => {
     setContent(trimmer());
   }, []);
   return (
-    <div className="single-news">
+    <div onClick={() => {}} className="single-news">
       <div className="single-news-top">
         <div className="single-news-date">
           <p>{props.news.date.day}</p>

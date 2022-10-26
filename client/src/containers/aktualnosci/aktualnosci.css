@@ -1,17 +1,9 @@
-.aktualnosci h1 {
-  font-size: 3rem;
-  font-family: "Marcellus", serif;
-}
-
-.aktualnosci {
+/* .aktualnosci {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  padding: 1rem;
-}
+} */
 
 .aktualnosci-container {
+  margin: 2rem;
   display: flex;
   gap: 30px;
   flex-wrap: wrap;

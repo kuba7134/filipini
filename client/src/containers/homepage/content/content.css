@@ -7,8 +7,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 1rem 1rem;
+  margin: 1rem auto;
   font-size: 1.3em;
+  max-width: 1500px;
 }
 
 .content-hours {

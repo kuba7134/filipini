@@ -1,10 +1,16 @@
 import React from "react";
 import "./parafia.css";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Ksieza from "./ksieza/Ksieza";
 import Kancelaria from "./kancelaria/Kancelaria"
 import office from "./resources/office.png"
 import priest from "./resources/priest.png"
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
+}
 
 
 const Parafia = () => {
@@ -12,13 +18,17 @@ const Parafia = () => {
   const renderSwitch = param => {
     switch (param) {
       case "kancelaria":
-        return <Kancelaria />;
+        return <Kancelaria key="kancelaria" />;
       case "ksieza":
-        return <Ksieza />;
+        return <Ksieza key="ksieza" />;
     }
   };
 
-  return <div className="parafia">
+  return <motion.div className="parafia"
+    variants={containerVariants}
+    initial="hidden"
+    animate="visible"
+    exit="hidden">
     <div className="parafia-header header-page">
       <h1>Parafia</h1>
       <div className="sakramenty-buttons">
@@ -29,7 +39,7 @@ const Parafia = () => {
           className="sakramenty-button"
         >
           <img src={office} alt="rings" />
-          <h2>Kancelaria</h2>
+          <p>Kancelaria</p>
         </div>
         <div
           onClick={() => {
@@ -38,14 +48,14 @@ const Parafia = () => {
           className="sakramenty-button"
         >
           <img src={priest} alt="chrzest" />
-          <h2>Księża</h2>
+          <p>Księża</p>
         </div>
       </div>
     </div>
     <div className="parafia-container">
-      {renderSwitch(parafia)}
+      <AnimatePresence mode="wait">{renderSwitch(parafia)}</AnimatePresence>
     </div>
-  </div>;
+  </motion.div>;
 };
 
 export default Parafia;

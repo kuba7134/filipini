@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Headerao } from "../../components";
 import "./aktualnosci.css";
 import SingleNews from "./singlenews/SingleNews";
@@ -18,16 +19,26 @@ Siostry i Bracia, raz jeszcze dziękując za Wasze modlitwy oraz wsparcie powoł
 ];
 const temp = [...news, ...news, ...news, ...news, ...news, ...news];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
+}
+
 const Aktualnosci = () => {
   return (
-    <div className="aktualnosci">
-      <Headerao title={"Aktualności"}/>
+    <motion.div className="aktualnosci"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+    >
+      <Headerao title={"Aktualności"} />
       <div className="aktualnosci-container">
         {temp.map(item => (
           <SingleNews news={item} key={item.id} />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

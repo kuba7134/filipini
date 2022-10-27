@@ -8,12 +8,7 @@
   max-width: 65ch;
   display: flex;
   flex-direction: column;
-  margin: 3rem auto;
-}
-
-.nabozenstwa-content h2 {
-  margin: 1rem 0;
-  font-size: 1rem;
+  margin: 1rem auto;
 }
 
 .nabozenstwa-content ul {
@@ -23,5 +18,5 @@
 }
 
 .nabozenstwa-content li {
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }

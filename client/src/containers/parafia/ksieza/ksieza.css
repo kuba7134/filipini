@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  text-align: center;
 }
 
 .ksieza-single img {

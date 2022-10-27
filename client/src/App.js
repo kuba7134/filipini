@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useRef } from "react";
+import { AnimatePresence } from "framer-motion";
 import {
   Homepage,
   Parafia,
@@ -18,14 +19,15 @@ import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
 
+  const location = useLocation()
   const kontaktRef = useRef(null)
 
   return (
-    <div className="App">
-      <Router>
-        <ScrollToTop />
-        <Navbar kontaktRef={kontaktRef} />
-        <Routes>
+    <>
+      <ScrollToTop />
+      <Navbar kontaktRef={kontaktRef} />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.key}>
           <Route path="/" element={<Homepage />} />
           <Route path="/aktualnosci" element={<Aktualnosci />} />
           <Route
@@ -40,9 +42,9 @@ const App = () => {
           <Route path="/kontakt" />
           <Route path="/forms" element={<Forms />} />
         </Routes>
-        <Footer ref={kontaktRef} />
-      </Router>
-    </div>
+      </AnimatePresence>
+      <Footer ref={kontaktRef} />
+    </>
   );
 };
 

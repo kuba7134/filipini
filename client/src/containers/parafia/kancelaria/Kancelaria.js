@@ -1,10 +1,19 @@
 import React from 'react'
 import "./kancelaria.css"
 import kancelariaimg from "../resources/kancelaria.jpg"
+import { motion } from "framer-motion"
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+}
 
 const kancelaria = () => {
     return (
-        <div className="kancelaria">
+        <motion.div className="kancelaria" key="kancelaria" variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden">
             <img src={kancelariaimg} alt="kancelaria" loading="lazy" />
             <div className="kancelaria-hours">
                 <h3>Kancelaria czynna:</h3>
@@ -22,7 +31,7 @@ const kancelaria = () => {
                 <p>Bank Pekao S.A. w Tomaszowie Maz.</p>
                 <p>91 1240 1718 1111 0000 1098 1843</p>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

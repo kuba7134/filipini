@@ -1,7 +1,13 @@
 import React from "react";
 import "./ogloszenia.css";
+import { motion } from "framer-motion";
 import { GiScrollUnfurled } from "react-icons/gi";
 import { Headerao } from "../../components";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
+}
 
 const single = {
   date: "16 X 2022",
@@ -22,8 +28,12 @@ const ogloszenia = [single, single, single, single, single];
 
 const Ogloszenia = () => {
   return (
-    <div className="ogloszenia">
-      <Headerao title="Ogłoszenia"/>
+    <motion.div className="ogloszenia"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="hidden">
+      <Headerao title="Ogłoszenia" />
       <div className="ogloszenia-container">
         <div className="ogloszenia-container-current">
           <div className="ogloszenia-container-current-top">
@@ -48,7 +58,7 @@ const Ogloszenia = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

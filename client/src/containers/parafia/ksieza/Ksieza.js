@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import "./ksieza.css"
 import chirk from "../resources/chirk.jpg"
 import bogusz from "../resources/bogusz.jpg"
@@ -6,9 +7,20 @@ import porczynski from "../resources/porczynski.jpg"
 import stepien from "../resources/stepien.jpg"
 import wojtunik from "../resources/wojtunik.jpg"
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+}
+
 const ksieza = () => {
     return (
-        <div className="ksieza">
+        <motion.div
+            className="ksieza"
+            key="ksieza"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit">
             <div className="ksieza-single">
                 <img src={wojtunik} alt="ks. Wacław Wojtunik" />
                 <h3>ks. Wacław Wojtunik COr</h3>
@@ -29,7 +41,7 @@ const ksieza = () => {
                 <img src={stepien} alt="ks. Piotr Stępień" />
                 <h3>ks. Piotr Stępień COr</h3>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

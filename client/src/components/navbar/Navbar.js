@@ -52,7 +52,7 @@ const Navbar = ({ kontaktRef }) => {
           Parafia
         </Link>
       </p>
-      <p onClick={() => {
+      <p className="navbar-button" onClick={() => {
         setToggleMenu(false)
         kontaktRef.current.scrollIntoView()
       }}>
@@ -88,7 +88,7 @@ const Navbar = ({ kontaktRef }) => {
           {!toggleMenu ? (
             <AiOutlineMenu size={27} onClick={() => setToggleMenu(true)} />
           ) : (
-            <AiOutlineClose size={27} onClick={() => setToggleMenu(false)} />
+            <AiOutlineMenu className="button-navbar-hidden" size={27} onClick={() => setToggleMenu(false)} />
           )}
           <AnimatePresence>
             {toggleMenu && (

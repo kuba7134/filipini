@@ -6,6 +6,11 @@
   margin: 3rem;
   justify-items: center;
   max-width: 1500px;
+  width: 100%;
+}
+
+.sakramenty-slub img {
+  width: 80%;
 }
 
 .sakramenty-slub-tekst {
@@ -40,7 +45,7 @@
     padding: 0;
   }
 
-    #slub2 {
+  #slub2 {
     order: 1;
   }
   .sakramenty-slub-bottom {

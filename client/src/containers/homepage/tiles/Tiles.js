@@ -11,19 +11,18 @@ const Tiles = () => {
   return (
     <div className="homepage-tiles">
       <Link to="/aktualnosci">
-        <motion.div whileHover={{ scale: 1.1 }}>
-          <div className="homepage-tile-single">
-            <div className="homepage-tile-single-title">
-              <div className="homepage-tile-single-img-box">
-                <img src={bible}></img>
-              </div>
-              <h2>AKTUALNOŚCI</h2>
+        <motion.div className="homepage-tile-single" whileHover={{ scale: 1.1 }}>
+          <div className="homepage-tile-single-title">
+            <div className="homepage-tile-single-img-box">
+              <img src={bible}></img>
             </div>
-            <p>
-              Tutaj znajdują się najważniejsze wiadomości z życia naszej
-              parafii. Nowości i aktualności oraz Słowo Boże.
-            </p>
+            <h2>AKTUALNOŚCI</h2>
           </div>
+          <p>
+            Tutaj znajdują się najważniejsze wiadomości z życia naszej
+            parafii. Nowości i aktualności oraz Słowo Boże.
+          </p>
+
         </motion.div>
       </Link>
       <Link to="/parafia">

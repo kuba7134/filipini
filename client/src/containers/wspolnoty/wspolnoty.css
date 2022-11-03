@@ -13,7 +13,9 @@
 }
 
 .wspolnoty-single img {
-  max-width: 600px;
+  width: 40%;
+  margin: 2rem;
+  max-width: 65ch;
 }
 
 .wspolnoty-quote-box {
@@ -24,6 +26,7 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  font-style: italic;
 }
 
 .wspolnoty-quote-box-author {
@@ -31,8 +34,29 @@
   margin-top: 1rem;
 }
 
+.wspolnoty-quote-box-list {
+  list-style: disc inside;
+  margin: 1rem 0;
+  text-indent: -1.7rem; /* key property */
+  margin-left: 1.2rem; /* key property */
+}
+
+.wspolnoty-quote-box-list li {
+  margin: 0.5rem 0.5rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .wspolnoty-single {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .wspolnoty-single img {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .wspolnoty-quote-box {
-    padding: 1rem;
+    padding: 0.7rem;
   }
 }

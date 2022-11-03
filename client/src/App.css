@@ -59,10 +59,37 @@ ul {
   margin-left: 3rem;
 }
 
-@media screen and (max-width: 800px) {
+.video-wrapper {
+  width: 700px;
+  height: 393.75px;
+  position: relative;
+  margin: 2rem 1rem;
+}
+
+.video-wrapper iframe {
+  box-shadow: 15px 15px var(--color-bg2);
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  position: absolute;
+}
+
+.text-no-wrap {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 900px) {
   .header-page h1 {
     font-size: 1.3em;
     margin-left: 1rem;
+  }
+
+  .video-wrapper {
+    width: 100%;
+    padding-bottom: 56%;
+    height: auto;
+    position: relative;
+    margin: 2rem 1rem;
   }
 }
 

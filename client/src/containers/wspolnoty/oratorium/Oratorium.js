@@ -23,7 +23,7 @@ const Oratorium = () => {
           <div className="title-separator"></div>
         </div>
         <div className="wspolnoty-quote-box">
-          <p style={{ fontStyle: "italic" }}>
+          <p>
             „Oratorium to grupa wiernych, dla których święty Filip
             pełen radości i ciągłego pragnienia nieba, stał się
             życiowym przewodnikiem. Grupa ta, której jestem dumnym

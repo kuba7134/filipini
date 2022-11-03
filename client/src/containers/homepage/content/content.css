@@ -24,8 +24,7 @@
 }
 
 .content-hours-lists ul {
-  margin-left: 2rem;
-  list-style: disc;
+  list-style: disc inside;
 }
 
 .content-hours-lists {

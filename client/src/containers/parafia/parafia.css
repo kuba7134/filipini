@@ -30,3 +30,9 @@
   box-shadow: 15px 15px var(--color-bg2);
   margin-bottom: 1rem;
 }
+
+@media screen and (max-width: 1400px) {
+  .parafia-container {
+    margin: 2rem 1rem;
+  }
+}

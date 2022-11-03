@@ -8,6 +8,7 @@ import Oratorium from "./oratorium/Oratorium";
 import OratoriumMl from "./oratoriumMl/OratoriumMl";
 import Schola from "./schola/Schola";
 import Ministrant from "./ministrant/Ministrant";
+import Przystan12 from "./przystan12/Przystan12";
 import Gma from "./gma/Gma";
 import Osb from "./osb/Osb";
 import azyl from "./resources/azyl.png";
@@ -18,6 +19,7 @@ import schola from "./resources/schola.png";
 import ministrant from "./resources/ministrant.png";
 import pray from "./resources/pray.png";
 import bible from "./resources/bible.png";
+import przystan12 from "./resources/przystan12.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -46,6 +48,8 @@ const Wspolnoty = () => {
         return <Osb key="osb" />;
       case "gma":
         return <Gma key="gma" />;
+      case "przystan12":
+        return <Przystan12 key="przystan12" />;
       default:
         return;
     }
@@ -164,6 +168,19 @@ const Wspolnoty = () => {
           >
             <img src={bible} alt="piano" />
             <p>Oratorium Słowa Bożego</p>
+          </div>
+          <div
+            onClick={() => {
+              setWspolnoty("przystan12");
+            }}
+            className={
+              wspolnoty === "przystan12"
+                ? "sakramenty-button sakramenty-button-active"
+                : "sakramenty-button"
+            }
+          >
+            <img src={przystan12} alt="przystan12" />
+            <p>Przystań Dwunastu</p>
           </div>
           <div
             onClick={() => {

@@ -18,6 +18,10 @@
   max-width: 65ch;
 }
 
+.sakramenty-slub-tekst p {
+  margin: 1rem 0;
+}
+
 .sakramenty-slub-tekst ul {
   list-style: disc;
   margin-left: 1rem;

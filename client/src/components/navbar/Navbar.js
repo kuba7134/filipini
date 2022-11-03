@@ -1,12 +1,14 @@
 import "./navbar.css";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = ({ kontaktRef }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   let menuRef = useRef();
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     let handler = event => {
@@ -43,6 +45,11 @@ const Navbar = ({ kontaktRef }) => {
         </Link>
       </p>
       <p>
+        <Link onClick={() => setToggleMenu(false)} to="/kongregacja">
+          Kongregacja
+        </Link>
+      </p>
+      <p>
         <Link onClick={() => setToggleMenu(false)} to="/wspolnoty">
           Wspólnoty
         </Link>
@@ -73,13 +80,14 @@ const Navbar = ({ kontaktRef }) => {
             />
           </Link>
         </div>
-        <div className="navbar-name">
+        <div onClick={() => { navigate("/") }} className="navbar-name">
           <h1>Parafia Świętej Rodziny</h1>
           <h2>
             w Tomaszowie Mazowieckim
             <br />{" "}
             <span className="navbar-przy">
-              przy Kongregacji Oratorium Św. Filipa Neri
+              przy Kongregacji Oratorium<br />{" "}
+              Św. Filipa Neri
             </span>
           </h2>
         </div>

@@ -7,4 +7,4 @@ import "./index.css";
 
 const root = createRoot(document.getElementById("root"));
 
-root.render(<Router><App tab="home" /></Router>);
+root.render(<React.StrictMode><Router><App tab="home" /></Router></React.StrictMode>);

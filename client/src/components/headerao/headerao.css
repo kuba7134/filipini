@@ -12,11 +12,12 @@
 
 .headerao h1 {
   margin-left: 3rem;
+  text-align: center;
 }
 
-@media screen and (max-width:800px) {
-  .headerao h1{
+@media screen and (max-width: 800px) {
+  .headerao h1 {
     font-size: 1.3em;
-    margin-left:  1rem;
+    margin-left: 1rem;
   }
 }

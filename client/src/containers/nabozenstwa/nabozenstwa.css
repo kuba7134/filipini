@@ -2,13 +2,14 @@
   background-image: url("./resources/cross.jpg");
   background-position: top right;
   padding-bottom: 200px;
+  text-align: center;
 }
 
 .nabozenstwa-content {
   max-width: 65ch;
   display: flex;
   flex-direction: column;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 
 .nabozenstwa-content ul {

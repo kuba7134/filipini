@@ -1,86 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./forms.css";
-import axios from "axios";
+import FormOgloszenia from "./formOgloszenia/FormOgloszenia";
+import FormAktualnosci from "./formAktualnosci/FormAktualnosci"
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+
+
 
 const Forms = () => {
-  const [post, setPost] = useState({
-    title: "",
-    content: "",
-    img: "",
-  });
 
-  const uploadHandler = e => {
-    console.log(e.target.files[0]);
-    const file = e.target.files[0];
-    file.isUploading = true;
-    setPost(prevState => ({
-      ...prevState,
-      img: file,
-    }));
-  };
+  const [email, setEmail] = useState("")
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
 
-  console.log(post);
+        console.log(user.email)
+        setEmail(user.email)
+      } else {
+        // User is signed out
+        // ...
+      }
+    })
+    return unsubscribe;
+  })
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    // const formData = new FormData();
-    // formData.append("title", post.title);
-    // formData.append("img", post.img);
-    // formData.append("content", post.content);
-
-    // console.log(...formData);
-    // "http://localhost:8000/newpost";"http://httpbin.org/post"
-    axios
-      .post("http://localhost:8000/newpost", { title: "siema" })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+  const [type, setType] = useState("ogloszenia")
 
   return (
     <div className="forms">
-      <form autoComplete="off" className="form" onSubmit={handleSubmit}>
-        <h1>Dodaj do aktualności</h1>
-        <input
-          type="text"
-          placeholder="Tytuł"
-          required
-          className="form-input"
-          id="search"
-          value={post.title}
-          onChange={e =>
-            setPost(prevState => ({
-              ...prevState,
-              title: e.target.value,
-            }))
-          }
-        />
-        <input
-          type="file"
-          placeholder="upload file"
-          className="form-input"
-          id="img"
-          onChange={uploadHandler}
-        />
-        <input
-          type="text"
-          placeholder="tekst"
-          required
-          className="form-input"
-          id="search"
-          value={post.content}
-          onChange={e =>
-            setPost(prevState => ({
-              ...prevState,
-              content: e.target.value,
-            }))
-          }
-        />
-        <button>Wyślij</button>
-      </form>
+      <div className="forms-email">{email}</div>
+      {type === "aktualnosci"
+        ?
+        <>
+          <button className="forms-button" onClick={() => setType("ogloszenia")}>ogłoszenia</button>
+          <FormAktualnosci />
+        </>
+        :
+        <>
+          <button className="forms-button" onClick={() => setType("aktualnosci")}>aktualnosci</button>
+          <FormOgloszenia />
+        </>}
     </div>
   );
 };

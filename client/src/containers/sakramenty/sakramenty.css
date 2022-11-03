@@ -8,6 +8,7 @@
   background-position: bottom;
   color: white;
   font-size: 2rem;
+  text-align: center;
 }
 
 .sakramenty-header h1 {
@@ -20,6 +21,7 @@
 
 .sakramenty-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
   padding: 2rem;
   padding-top: 4rem;
@@ -41,15 +43,32 @@
   min-width: 125px;
 }
 
+.sakramenty-button img {
+  height: 70px;
+  object-fit: contain;
+}
+
+.sakramenty-button:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+.sakramenty-button-active {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
 .sakramenty-button p {
   margin: 0 0.5rem;
+  font-size: 0.5em;
+  width: 125px;
 }
 
 .sakramenty-content {
   display: flex;
   justify-content: center;
   max-width: 1600px;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 
 .sakramenty-button:hover {

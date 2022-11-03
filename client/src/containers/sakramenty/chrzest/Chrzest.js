@@ -1,10 +1,20 @@
 import React from "react";
 import "./chrzest.css";
 import chrzest from "../resources/chrzest.jpg";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+}
 
 const Chrzest = () => {
   return (
-    <div className="sakramenty-chrzest sakramenty-single">
+    <motion.div className="sakramenty-chrzest sakramenty-single"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="hidden">
       <div className="sakramenty-chrzest-tekst">
         <div className="title">
           <h2>Chrzest</h2>
@@ -17,14 +27,14 @@ const Chrzest = () => {
           spoza naszej parafii powinni dostarczyć zaświadczenie, że mogą pełnić
           taką funkcję. Do kancelarii parafialnej należy dostarczyć akt
           urodzenia dziecka wydany przez USC. Świecę i chustę do chrztu św.
-          rodzice załatwiają we własnym zakresie. Dla owocnego przeżycia chrztu
+          Dla owocnego przeżycia chrztu
           dziecka rodzice i rodzice chrzestni przystępują do sakramentu pokuty
           otrzymując odpowiednią kartkę do podpisu przez szafarza sakramentu
           pojednania.
         </p>
       </div>
       <img src={chrzest} alt="chrzest" />
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,0 +1,11 @@
+.form-ogloszenia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-ogloszenia-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

@@ -6,6 +6,9 @@ import Ksieza from "./ksieza/Ksieza";
 import Kancelaria from "./kancelaria/Kancelaria"
 import office from "./resources/office.png"
 import priest from "./resources/priest.png"
+import rys from "./resources/clock.png"
+import RysHistoryczny from "./rysHistoryczny/RysHistoryczny";
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -21,6 +24,10 @@ const Parafia = () => {
         return <Kancelaria key="kancelaria" />;
       case "ksieza":
         return <Ksieza key="ksieza" />;
+      case "rysHistoryczny":
+        return <RysHistoryczny key="rysHistoryczny" />;
+      default:
+        return
     }
   };
 
@@ -49,6 +56,15 @@ const Parafia = () => {
         >
           <img src={priest} alt="chrzest" />
           <p>Księża</p>
+        </div>
+        <div
+          onClick={() => {
+            setParafia("rysHistoryczny");
+          }}
+          className="sakramenty-button"
+        >
+          <img style={{ width: 100 }} src={rys} alt="clock" />
+          <p>Historia</p>
         </div>
       </div>
     </div>

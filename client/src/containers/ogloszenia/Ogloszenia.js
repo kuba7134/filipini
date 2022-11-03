@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ogloszenia.css";
 import { motion } from "framer-motion";
-import { GiScrollUnfurled } from "react-icons/gi";
 import { Headerao } from "../../components";
+import { collection, getDocs, orderBy, query, limit } from "firebase/firestore";
+import { db } from "../../firebase-config";
+
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 }
 }
+
+
 
 const single = {
   date: "16 X 2022",
@@ -26,7 +31,41 @@ const single = {
 
 const ogloszenia = [single, single, single, single, single];
 
+
+
 const Ogloszenia = () => {
+
+  const [ogloszenia2, setOgloszenia2] = useState("")
+
+  console.log(process.env.REACT_APP_FIREBASE_APIKEY)
+
+  useEffect(() => {
+    console.log("fetch")
+    const ogloszenia = []
+    const ogloszeniaRef = collection(db, "ogloszenia")
+    const q = query(ogloszeniaRef, orderBy("date", "desc"), limit(3))
+    const fetchData = async () => {
+      try {
+        const querySnapshot = await getDocs(q);
+        console.log(querySnapshot)
+        querySnapshot.forEach((doc) => {
+          console.log(`${doc.id} => ${doc.data()}`);
+          ogloszenia.push(doc.data())
+        });
+      } catch (error) {
+        console.log(error)
+        setOgloszenia2("")
+      }
+      setOgloszenia2(ogloszenia)
+      console.log(ogloszenia2)
+    }
+    fetchData()
+
+
+  }, [])
+
+
+
   return (
     <motion.div className="ogloszenia"
       variants={containerVariants}
@@ -35,28 +74,32 @@ const Ogloszenia = () => {
       exit="hidden">
       <Headerao title="Ogłoszenia" />
       <div className="ogloszenia-container">
-        <div className="ogloszenia-container-current">
-          <div className="ogloszenia-container-current-top">
-            <p>{ogloszenia[0].date}</p>
-            <h2>{ogloszenia[0].title}</h2>
-          </div>
-          <ul>
-            {ogloszenia[0].text.map((item, index) => (
-              <li key={index} className="ogloszenia-single-text">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="ogloszenia-container-all">
-          <h2>Poprzednie ogłoszenia</h2>
-          {ogloszenia.map((item, index) => (
-            <div key={index} className="ogloszenia-container-all-single">
-              <p>{item.date}</p>
-              <h3>{item.title}</h3>
+        {ogloszenia2 &&
+          <>
+            <div className="ogloszenia-container-current">
+              <div className="ogloszenia-container-current-top">
+                <p>{ogloszenia2[0].date}</p>
+                <h2>{ogloszenia2[0].title}</h2>
+              </div>
+              <ul>
+                {ogloszenia2[0].text.map((item, index) => (
+                  <li key={index} className="ogloszenia-single-text">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
-        </div>
+            <div className="ogloszenia-container-all">
+              <h2>Poprzednie ogłoszenia</h2>
+              {ogloszenia2.map((item, index) => (
+                <div key={index} className="ogloszenia-container-all-single">
+                  <p>{item.date}</p>
+                  <h3>{item.title}</h3>
+                </div>
+              ))}
+            </div>
+          </>
+        }
       </div>
     </motion.div>
   );

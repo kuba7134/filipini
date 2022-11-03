@@ -20,7 +20,7 @@ const Footer = forwardRef((props, ref) => {
         <div className="footer-address footer-column">
           <h3>Adres</h3>
           <a href="https://goo.gl/maps/ichHV2LVnGVfmmpR6" target="blank"><SiGooglemaps /></a>
-          <p>ul. Niska 81</p>
+          <p>ul. św Filipa Neri 1</p>
           <p>Tomaszów Mazowiecki</p>
         </div>
         <div className="footer-contact footer-column">

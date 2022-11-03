@@ -10,7 +10,11 @@
 }
 
 .navbar-name {
-  margin: 1rem 1 rem;
+  text-align: center;
+}
+
+.navbar-name:hover {
+  cursor: pointer;
 }
 
 .navbar-button:hover {
@@ -29,7 +33,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 6rem;
+  padding: 2rem 2rem;
   max-width: 1600px;
   width: 100%;
 }
@@ -37,8 +41,12 @@
 .navbar-links-list {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 75%;
   gap: 25px;
+}
+
+.navbar-przy {
+  display: inline-block;
 }
 
 .navbar-links-logo {
@@ -61,6 +69,7 @@
 .navbar-menu svg {
   cursor: pointer;
   width: 27px;
+  margin-right: 10px;
 }
 
 .navbar-menu-container {
@@ -84,14 +93,7 @@
   color: var(--color-bg);
 }
 
-@media screen and (max-width: 1400px) {
-  .navbar-name h1 {
-    font-size: 1rem;
-  }
-
-  .navbar-name h2 {
-    font-size: 0.75rem;
-  }
+@media screen and (max-width: 1600px) {
   .navbar-links-list {
     display: none;
   }
@@ -107,10 +109,15 @@
 
 @media screen and (max-width: 700px) {
   .navbar-links {
-    padding: 1rem 1rem;
+    padding: 0.5rem 0.5rem;
   }
+
   .navbar-przy {
     display: none;
+  }
+
+  .navbar-links-logo {
+    padding-right: 0.5rem;
   }
 
   .navbar-links-logo img {
@@ -119,5 +126,11 @@
   }
   .navbar {
     height: 80px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar-name {
+    font-size: 0.66em;
   }
 }

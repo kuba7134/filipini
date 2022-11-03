@@ -20,14 +20,10 @@ const ksieza = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            exit="exit">
+            exit="hidden">
             <div className="ksieza-single">
                 <img src={wojtunik} alt="ks. Wacław Wojtunik" />
                 <h3>ks. Wacław Wojtunik COr</h3>
-            </div>
-            <div className="ksieza-single">
-                <img src={porczynski} alt="ks. Marek Porczyński" />
-                <h3>ks. Marek Porczyński COr</h3>
             </div>
             <div className="ksieza-single">
                 <img src={bogusz} alt="ks. Sławomir Bogusz" />

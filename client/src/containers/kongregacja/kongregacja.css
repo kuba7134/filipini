@@ -1,0 +1,15 @@
+.kongregacja-header {
+  background-image: url("./resources/kongregacja.jpg");
+  background-position: top center;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.kongregacja {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#kongregacja-fneri {
+  border-radius: 20px;
+}

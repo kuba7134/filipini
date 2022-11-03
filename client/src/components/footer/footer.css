@@ -3,8 +3,8 @@
   background-color: var(--color-footer);
   background-size: cover;
   color: white;
-  padding-top: 70px;
-  padding-bottom: 150px;
+  padding-top: 50px;
+  padding-bottom: 80px;
   background-blend-mode: multiply;
   background-position: bottom left;
   display: flex;
@@ -19,6 +19,7 @@
   display: flex;
   justify-content: space-between;
   gap: 100px;
+  text-align: center;
 }
 
 .footer-column {
@@ -29,6 +30,11 @@
   gap: 20px;
 }
 
+.footer-basic h2,
+.footer-basic h3 {
+  text-align: center;
+}
+
 .footer-phone-number {
   display: flex;
   gap: 30px;
@@ -37,7 +43,7 @@
 }
 
 .footer-address svg {
-  font-size: 60px;
+  font-size: 40px;
 }
 
 .footer-phone-number svg {
@@ -45,7 +51,7 @@
 }
 
 .footer-media-box svg {
-  font-size: 60px;
+  font-size: 40px;
   margin: 1rem;
 }
 

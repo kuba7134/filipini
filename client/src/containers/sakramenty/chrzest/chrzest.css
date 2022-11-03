@@ -5,12 +5,15 @@
 
 .sakramenty-chrzest-tekst {
   max-width: 65ch;
-  /* margin: 2rem; */
+  margin: 2rem;
 }
 
 @media screen and (max-width: 1100px) {
   .sakramenty-chrzest {
     margin: 1rem;
+  }
+  .sakramenty-chrzest-tekst {
+    margin: 0;
   }
 }
 

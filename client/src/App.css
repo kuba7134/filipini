@@ -64,10 +64,11 @@ ul {
   height: 393.75px;
   position: relative;
   margin: 2rem 1rem;
+  box-shadow: 15px 15px var(--color-bg2),
+    rgba(0, 0, 0, 0.56) 0px 22px 80px 13px;
 }
 
 .video-wrapper iframe {
-  box-shadow: 15px 15px var(--color-bg2);
   width: 100%;
   max-width: 900px;
   height: 100%;

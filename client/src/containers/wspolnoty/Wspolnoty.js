@@ -15,6 +15,7 @@ import azyl from "./resources/azyl.png";
 import caritas from "./resources/caritas.png";
 import dom from "./resources/dom.png";
 import oratorium from "./resources/oratorium.png";
+import oratoriumMl from "./resources/oratoriumMl.png";
 import schola from "./resources/schola.png";
 import ministrant from "./resources/ministrant.png";
 import pray from "./resources/pray.png";
@@ -153,7 +154,7 @@ const Wspolnoty = () => {
                 : "sakramenty-button"
             }
           >
-            <img src={oratorium} alt="piano" />
+            <img src={oratoriumMl} alt="piano" />
             <p>Oratorium Młodych</p>
           </div>
           <div

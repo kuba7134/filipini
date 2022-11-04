@@ -8,7 +8,7 @@ const Navbar = ({ kontaktRef }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   let menuRef = useRef();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     let handler = event => {
@@ -59,11 +59,10 @@ const Navbar = ({ kontaktRef }) => {
           Parafia
         </Link>
       </p>
-      <p className="navbar-button" onClick={() => {
-        setToggleMenu(false)
-        kontaktRef.current.scrollIntoView()
-      }}>
-        Kontakt
+      <p>
+        <Link onClick={() => setToggleMenu(false)} to="/kontakt">
+          Kontakt
+        </Link>
       </p>
     </>
   );
@@ -80,23 +79,35 @@ const Navbar = ({ kontaktRef }) => {
             />
           </Link>
         </div>
-        <div onClick={() => { navigate("/") }} className="navbar-name">
+        <div
+          onClick={() => {
+            navigate("/");
+          }}
+          className="navbar-name"
+        >
           <h1>Parafia Świętej Rodziny</h1>
           <h2>
             w Tomaszowie Mazowieckim
             <br />{" "}
             <span className="navbar-przy">
-              przy Kongregacji Oratorium<br />{" "}
-              Św. Filipa Neri
+              przy Kongregacji Oratorium
+              <br /> Św. Filipa Neri
             </span>
           </h2>
         </div>
         <div className="navbar-links-list">{list}</div>
         <div className="navbar-menu">
           {!toggleMenu ? (
-            <AiOutlineMenu size={27} onClick={() => setToggleMenu(true)} />
+            <AiOutlineMenu
+              size={27}
+              onClick={() => setToggleMenu(true)}
+            />
           ) : (
-            <AiOutlineMenu className="button-navbar-hidden" size={27} onClick={() => setToggleMenu(false)} />
+            <AiOutlineMenu
+              className="button-navbar-hidden"
+              size={27}
+              onClick={() => setToggleMenu(false)}
+            />
           )}
           <AnimatePresence>
             {toggleMenu && (
@@ -108,10 +119,13 @@ const Navbar = ({ kontaktRef }) => {
                 key="navbar-menu"
                 className="navbar-menu-container"
               >
-                <AiOutlineClose
-                  size={27}
-                  onClick={() => setToggleMenu(false)}
-                />
+                <div className="navbar-menu-svg-wrapper">
+                  {" "}
+                  <AiOutlineClose
+                    size={27}
+                    onClick={() => setToggleMenu(false)}
+                  />
+                </div>
                 {list}
               </motion.div>
             )}

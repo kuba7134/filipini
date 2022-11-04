@@ -1,7 +1,8 @@
 import React from "react";
 import "./przystan12.css";
-import przystan12 from "./resources/przystan12.jpg";
+import { images } from "./images";
 import { motion } from "framer-motion";
+import Carousel from "../../../components/carousel/Carousel";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -18,9 +19,13 @@ const Przystan12 = () => {
         animate="visible"
         exit="hidden"
       >
-        <div className="sakramenty-chrzest-tekst">
-          <div className="title">
-            <h2>Przystań dwunastu</h2>
+        <div className="title title-top">
+          <h2>Przystań Dwunastu</h2>
+          <div className="title-separator"></div>
+        </div>
+        <div className="wspolnoty-tekst sakramenty-chrzest-tekst">
+          <div className="title-with-top">
+            <h2>Przystań Dwunastu</h2>
             <div className="title-separator"></div>
           </div>
           <div className="wspolnoty-quote-box">
@@ -95,7 +100,7 @@ const Przystan12 = () => {
             </p>
           </div>
         </div>
-        <img src={przystan12} alt="chrzest" />
+        <Carousel images={images} />
       </motion.div>
       <div className="video-wrapper">
         <iframe

@@ -14,17 +14,16 @@ import {
   Ogloszenia,
   Nabozenstwa,
   Login,
-  Kongregacja
+  Kongregacja,
+  Kontakt,
 } from "./containers";
 import { Footer, Navbar } from "./components";
 import ScrollToTop from "./ScrollToTop";
 import { AuthProvider } from "./contexts/AuthContext";
 
 const App = () => {
-
-
-  const location = useLocation()
-  const kontaktRef = useRef(null)
+  const location = useLocation();
+  const kontaktRef = useRef(null);
 
   return (
     <>
@@ -44,7 +43,7 @@ const App = () => {
             <Route path="/sakramenty" element={<Sakramenty />} />
             <Route path="/wspolnoty" element={<Wspolnoty />} />
             <Route path="/parafia" element={<Parafia />} />
-            <Route path="/kontakt" />
+            <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/forms" element={<Forms />} />
             <Route path="/login" element={<Login />} />
             <Route path="/kongregacja" element={<Kongregacja />} />

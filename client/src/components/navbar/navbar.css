@@ -65,10 +65,14 @@
   margin-left: 1rem;
   display: none;
 }
+.navbar-menu-svg-wrapper {
+  height: 27px;
+}
 
 .navbar-menu svg {
   cursor: pointer;
   width: 27px;
+  height: 27px;
   margin-right: 10px;
 }
 
@@ -87,6 +91,7 @@
   min-width: 210px;
   height: 100vh;
   z-index: 1;
+  overflow-y: scroll;
 }
 
 .button-navbar-hidden {

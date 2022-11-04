@@ -7,5 +7,6 @@ export { default as SingleNewsPage } from "./aktualnosci/singlenewspage/SingleNe
 export { default as Forms } from "./forms/Forms.js";
 export { default as Ogloszenia } from "./ogloszenia/Ogloszenia.js";
 export { default as Nabozenstwa } from "./nabozenstwa/Nabozenstwa";
-export { default as Login } from "./login/Login"
-export { default as Kongregacja } from "./kongregacja/Kongregacja"
+export { default as Login } from "./login/Login";
+export { default as Kongregacja } from "./kongregacja/Kongregacja";
+export { default as Kontakt } from "./kontakt/Kontakt";

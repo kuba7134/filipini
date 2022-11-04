@@ -38,6 +38,32 @@ ul {
   display: inline-block;
 }
 
+.title-with-top {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.title-with-top h2 {
+  display: inline-block;
+}
+
+.title-top {
+  display: none;
+  flex-direction: column;
+  width: fit-content;
+  width: 100%;
+  max-width: 65ch;
+}
+
+.title-top .title-separator {
+  margin-bottom: 1rem;
+}
+
+.title-top h2 {
+  display: inline-block;
+}
+
 .title-separator {
   height: 1px;
   background-color: var(--color-footer);
@@ -78,7 +104,15 @@ ul {
 .text-no-wrap {
   white-space: nowrap;
 }
-
+@media screen and (max-width: 1400px) {
+  .title-top {
+    order: -2;
+    display: flex;
+  }
+  .title-with-top {
+    display: none;
+  }
+}
 @media screen and (max-width: 900px) {
   .header-page h1 {
     font-size: 1.3em;

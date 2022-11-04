@@ -5,6 +5,7 @@ import fneri from "../resources/fneri.png";
 const Content = () => {
   return (
     <div className="content">
+      <img src={fneri} alt="Filip Neri" />
       <div className="content-hours">
         <div className="content-hours-title">
           <h2>Porządek mszy świętych</h2>
@@ -14,28 +15,28 @@ const Content = () => {
           <ul>
             <h3>Niedziela</h3>
             <li>
-              <span className="content-hours-list-span">7:30</span> - dla
-              wszystkich
+              <span className="content-hours-list-span">7:30</span> -
+              dla wszystkich
             </li>
             <li>
-              <span className="content-hours-list-span">9:00</span> - dla
-              wszystkich
+              <span className="content-hours-list-span">9:00</span> -
+              dla wszystkich
             </li>
             <li>
-              <span className="content-hours-list-span">11:00</span> - dla
-              dzieci
+              <span className="content-hours-list-span">11:00</span> -
+              dla dzieci
             </li>
             <li>
-              <span className="content-hours-list-span">12.30</span> - dla
-              wszystkich
+              <span className="content-hours-list-span">12.30</span> -
+              dla wszystkich
             </li>
             <li>
-              <span className="content-hours-list-span">18.00</span> - dla
-              wszystkich
+              <span className="content-hours-list-span">18.00</span> -
+              dla wszystkich
             </li>
             <li>
-              <span className="content-hours-list-span">19.30</span> - Msza
-              święta "ostatniej szansy"
+              <span className="content-hours-list-span">19.30</span> -
+              Msza święta "ostatniej szansy"
             </li>
           </ul>
           <ul>
@@ -49,7 +50,6 @@ const Content = () => {
           </ul>
         </div>
       </div>
-      <img src={fneri} alt="Filip Neri" />
     </div>
   );
 };

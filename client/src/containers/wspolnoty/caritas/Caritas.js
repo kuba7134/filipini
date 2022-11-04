@@ -1,6 +1,7 @@
 import React from "react";
-import caritas from "./resources/caritas.jpg";
 import { motion } from "framer-motion";
+import Carousel from "../../../components/carousel/Carousel";
+import { images } from "./images";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -16,8 +17,12 @@ const Caritas = () => {
       animate="visible"
       exit="hidden"
     >
-      <div className="sakramenty-chrzest-tekst">
-        <div className="title">
+      <div className="title title-top">
+        <h2>Zespół Caritas parafialna</h2>
+        <div className="title-separator"></div>
+      </div>
+      <div className="wspolnoty-tekst sakramenty-chrzest-tekst">
+        <div className="title-with-top">
           <h2>Zespół Caritas parafialna</h2>
           <div className="title-separator"></div>
         </div>
@@ -55,7 +60,7 @@ const Caritas = () => {
           </p>
         </div>
       </div>
-      <img src={caritas} alt="chrzest" />
+      <Carousel images={images} />
     </motion.div>
   );
 };

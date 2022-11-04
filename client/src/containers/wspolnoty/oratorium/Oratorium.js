@@ -1,7 +1,8 @@
 import React from "react";
 import "./oratorium.css";
-import oratorium from "./resources/oratorium.jpg";
 import { motion } from "framer-motion";
+import Carousel from "../../../components/carousel/Carousel";
+import { images } from "./images";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -17,8 +18,12 @@ const Oratorium = () => {
       animate="visible"
       exit="hidden"
     >
-      <div className="sakramenty-chrzest-tekst">
-        <div className="title">
+      <div className="title title-top">
+        <h2>Przystań Dwunastu</h2>
+        <div className="title-separator"></div>
+      </div>
+      <div className="wspolnoty-tekst sakramenty-chrzest-tekst">
+        <div className="title-with-top">
           <h2>Oratorium</h2>
           <div className="title-separator"></div>
         </div>
@@ -52,7 +57,7 @@ const Oratorium = () => {
           </p>
         </div>
       </div>
-      <img src={oratorium} alt="chrzest" />
+      <Carousel images={images} />
     </motion.div>
   );
 };

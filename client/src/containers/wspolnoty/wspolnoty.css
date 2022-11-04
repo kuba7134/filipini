@@ -12,10 +12,19 @@
   justify-content: center;
 }
 
+.wspolnoty-single {
+  justify-content: center;
+}
+
 .wspolnoty-single img {
   width: 40%;
   margin: 2rem;
-  max-width: 65ch;
+  max-width: 70ch;
+}
+
+.wspolnoty-tekst {
+  flex-basis: calc(850px - 5rem);
+  flex-shrink: 1;
 }
 
 .wspolnoty-quote-box {
@@ -46,9 +55,12 @@
 }
 
 @media screen and (max-width: 1400px) {
+  .wspolnoty-tekst {
+    flex-basis: auto;
+  }
+
   .wspolnoty-single {
     flex-direction: column;
-    gap: 5rem;
   }
   .wspolnoty-single img {
     width: 100%;

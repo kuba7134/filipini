@@ -22,7 +22,6 @@
 .sakramenty-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
   padding: 2rem;
   padding-top: 4rem;
   width: 100%;
@@ -30,11 +29,11 @@
 }
 
 .sakramenty-button {
+  margin: 0.5rem;
   height: 150px;
   background-color: var(--color-bg2);
   border-radius: 1rem;
   display: flex;
-  gap: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -76,8 +75,8 @@
 }
 
 .sakramenty-single {
-  margin: 3rem;
-  max-width: 1500px;
+  margin: auto;
+  max-width: 1600px;
   align-items: center;
 }
 
@@ -97,14 +96,45 @@
   }
 
   .sakramenty-buttons {
-    padding: 2rem 1rem;
-    flex-wrap: wrap;
+    padding: 1rem;
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
+  .sakramenty-buttons {
+    padding: 0.7rem;
+  }
   .sakramenty-header h1 {
     font-size: 1.3em;
     margin-left: 5px;
+  }
+
+  .sakramenty-button {
+    margin: 0.3rem;
+    height: 105px;
+    font-size: 0.85em;
+    min-width: 115px;
+  }
+
+  .sakramenty-button img {
+    height: 50px;
+  }
+
+  .sakramenty-button p {
+    width: 115px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sakramenty-button p {
+    width: 105px;
+    margin: 0 0.15rem;
+  }
+
+  .sakramenty-buttons {
+    padding: 0.15rem;
+  }
+  .sakramenty-button {
+    margin: 0.15rem;
   }
 }

@@ -10,8 +10,14 @@ import { forwardRef } from "react";
 
 const Footer = forwardRef((props, ref) => {
   const copyNumber = () => {
-    navigator.clipboard.writeText("91124017181111000010981843");
-    alert("Skopiowano numer rachunku bankowego.");
+    navigator.clipboard
+      .writeText("91124017181111000010981843")
+      .then(() => {
+        alert("Skopiowano numer rachunko bankowego.");
+      })
+      .catch(() => {
+        alert("something went wrong");
+      });
   };
 
   return (
@@ -66,7 +72,10 @@ const Footer = forwardRef((props, ref) => {
             href="mailto:tomaszow-rodziny@archidiecezja.lodz.pl"
           >
             <IoIosMail />
-            <p>tomaszow-rodziny@archidiecezja.lodz.pl</p>
+            <p className="email-adress">
+              <span>tomaszow&#8209;rodziny</span>
+              <span>@archidiecezja.lodz.pl</span>
+            </p>
           </a>
         </div>
         <div className="footer-organizacje footer-column">

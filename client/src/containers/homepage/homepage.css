@@ -7,19 +7,19 @@
 }
 
 .homepage-header-container {
-  height: 720px;
+  height: 100vh;
 }
 
 .homepage-img-container {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 100vh;
   overflow-x: hidden;
 }
 
 .homepage-header-img {
   width: 100%;
-  height: 600px;
+  height: 100vh;
   object-fit: cover;
   position: absolute;
   top: 0px;

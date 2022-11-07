@@ -8,7 +8,6 @@ const FormOgloszenia = () => {
   const [count, setCount] = useState(0);
   const [ogloszenia, setOgloszenia] = useState({ 0: "" });
   const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
 
   const ogloszenie = () => {
     let jsx = [];
@@ -42,12 +41,16 @@ const FormOgloszenia = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    const date = new Date();
     const addOgloszenia = async () => {
       try {
         const docRef = await addDoc(collection(db, "ogloszenia"), {
           title,
-          date,
           text: Object.values(ogloszenia),
+          date: date.get,
+          day: date.getDate(),
+          month: date.getMonth(),
+          year: date.getFullYear(),
         });
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
@@ -68,12 +71,6 @@ const FormOgloszenia = () => {
           placeholder="title"
           value={title}
           onChange={e => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="data"
-          value={date}
-          onChange={e => setDate(e.target.value)}
         />
         {ogloszenie().map(item => item)}
         <button>Wyślij ogłoszenia</button>

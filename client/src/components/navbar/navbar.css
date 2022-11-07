@@ -1,16 +1,20 @@
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: var(--color-bg);
-  height: 150px;
-  position: sticky;
+  height: 110px;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 10;
-  box-shadow: 0px 0px 10px 5px black;
 }
 
 .navbar-name {
   text-align: center;
+  margin: 0.5rem;
+  border-radius: 4px;
+  background-color: var(--color-transparent-bg2);
+  color: white;
+  padding: 4px 8px;
 }
 
 .navbar-name:hover {
@@ -33,7 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 1rem;
   max-width: 1600px;
   width: 100%;
 }
@@ -41,8 +45,20 @@
 .navbar-links-list {
   display: flex;
   justify-content: space-between;
-  width: 75%;
-  gap: 25px;
+  flex-grow: 1;
+}
+
+.navbar-links-list p {
+  margin: 0 0.5rem;
+  background-color: var(--color-transparent-bg2);
+  font-weight: 590;
+  color: white;
+  padding: 10px 5px;
+  border-radius: 4px;
+}
+
+.navbar-links-list p:hover {
+  background-color: var(--color-bg2);
 }
 
 .navbar-przy {
@@ -50,15 +66,17 @@
 }
 
 .navbar-links-logo {
-  padding-right: 2rem;
+  padding-right: 1rem;
   user-select: none;
 }
 
 .navbar-links-logo img {
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
   object-fit: cover;
   border-radius: 50%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .navbar-menu {
@@ -97,8 +115,32 @@
 .button-navbar-hidden {
   color: var(--color-bg);
 }
+@media screen and (max-width: 1300px) {
+  .navbar {
+    font-size: 0.95em;
+  }
+  .navbar-przy {
+    display: none;
+  }
+  .navbar-links-logo {
+    padding-right: 0.1rem;
+    user-select: none;
+  }
 
-@media screen and (max-width: 1600px) {
+  .navbar-links-logo img {
+    width: 60px;
+    height: 60px;
+  }
+  .navbar-name {
+    text-align: center;
+    margin: 0 0.2rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .navbar {
+    height: 90px;
+  }
   .navbar-links-list {
     display: none;
   }
@@ -108,7 +150,10 @@
   }
 
   .navbar-links {
-    padding: 1rem 3rem;
+    padding: 1rem;
+  }
+  .navbar-przy {
+    display: inline-block;
   }
 }
 
@@ -136,6 +181,6 @@
 
 @media screen and (max-width: 400px) {
   .navbar-name {
-    font-size: 0.66em;
+    font-size: 0.9em;
   }
 }

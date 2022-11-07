@@ -24,11 +24,16 @@ const Navbar = ({ kontaktRef }) => {
 
   const list = (
     <>
-      <p>
-        <Link onClick={() => setToggleMenu(false)} to="/aktualnosci">
-          Aktualności
-        </Link>
-      </p>
+      <div className="navbar-links-button">
+        <p>
+          <Link
+            onClick={() => setToggleMenu(false)}
+            to="/aktualnosci"
+          >
+            Aktualności
+          </Link>
+        </p>
+      </div>
       <p>
         <Link onClick={() => setToggleMenu(false)} to="/ogloszenia">
           Ogłoszenia
@@ -91,7 +96,7 @@ const Navbar = ({ kontaktRef }) => {
             <br />{" "}
             <span className="navbar-przy">
               przy Kongregacji Oratorium
-              <br /> Św. Filipa Neri
+              <span className="text-no-wrap"> Św. Filipa Neri</span>
             </span>
           </h2>
         </div>

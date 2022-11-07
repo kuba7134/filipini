@@ -25,8 +25,8 @@ const Tiles = () => {
             <h2>AKTUALNOŚCI</h2>
           </div>
           <p>
-            Tutaj znajdują się najważniejsze wiadomości z życia naszej
-            parafii. Aktualności oraz Słowo Boże na każdy dzień.
+            Tutaj znajdują się najważniejsze wiadomości z życia
+            parafii. Aktualności i Słowo Boże na każdy dzień.
           </p>
         </motion.div>
       </div>

@@ -16,23 +16,6 @@ const containerVariants = {
   visible: { opacity: 1 },
 };
 
-const single = {
-  date: "16 X 2022",
-  title: "XXIX NIEDZIELA ZWYKŁA",
-  text: [
-    "Dziś zmiana tajemnic Żywego Różańca. Przypominamy, że od dziś wieczorna Msza św. w niedziele i święta będzie o g. 17.oo.",
-    "We wtorek modlitwa do św. Filipa Neri, a w środę Nowenna do MBNP o g. 8.3o i 18.oo.",
-    "W drugi czwartek miesiąca Msza św. w intencji rodzin Domowego Kościoła i Krucjaty Wyzwolenia Człowieka o g. 18.oo. Nabożeństwo do Matki Bożej Rozwiązującej Węzły 8.09. o g. 20.oo.",
-    "Koronka do Miłosierdzia Bożego w piątek o g. 15.oo.",
-    "Dziś zmiana tajemnic Żywego Różańca. Przypominamy, że od dziś wieczorna Msza św. w niedziele i święta będzie o g. 17.oo.",
-    "We wtorek modlitwa do św. Filipa Neri, a w środę Nowenna do MBNP o g. 8.3o i 18.oo.",
-    "W drugi czwartek miesiąca Msza św. w intencji rodzin Domowego Kościoła i Krucjaty Wyzwolenia Człowieka o g. 18.oo. Nabożeństwo do Matki Bożej Rozwiązującej Węzły 8.09. o g. 20.oo.",
-    "Koronka do Miłosierdzia Bożego w piątek o g. 15.oo.",
-  ],
-};
-
-// const ogloszenia = [single, single, single, single, single];
-
 const Ogloszenia = () => {
   const [ogloszenia2, setOgloszenia2] = useState("");
 
@@ -42,7 +25,11 @@ const Ogloszenia = () => {
     console.log("fetch");
     const ogloszenia = [];
     const ogloszeniaRef = collection(db, "ogloszenia");
-    const q = query(ogloszeniaRef, orderBy("date", "desc"), limit(3));
+    const q = query(
+      ogloszeniaRef,
+      orderBy("date", "desc"),
+      limit(10)
+    );
     const fetchData = async () => {
       try {
         const querySnapshot = await getDocs(q);
@@ -53,13 +40,11 @@ const Ogloszenia = () => {
         });
       } catch (error) {
         console.log(error);
-        setOgloszenia2("");
       }
       setOgloszenia2(ogloszenia);
-      console.log(ogloszenia2);
     };
     fetchData();
-  });
+  }, []);
 
   return (
     <motion.div
@@ -75,7 +60,15 @@ const Ogloszenia = () => {
           <>
             <div className="ogloszenia-container-current">
               <div className="ogloszenia-container-current-top">
-                <p>{ogloszenia2[0].date}</p>
+                <p>
+                  {[
+                    ogloszenia2[0].day,
+                    ".",
+                    ogloszenia2[0].month,
+                    ".",
+                    ogloszenia2[0].year,
+                  ]}
+                </p>
                 <h2>{ogloszenia2[0].title}</h2>
               </div>
               <ul>

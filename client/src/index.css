@@ -3,12 +3,21 @@
 :root {
   --font-family: "Montserrat", sans-serif;
 
-  --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
-  --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
+  --gradient-text: linear-gradient(
+    89.97deg,
+    #ae67fa 1.84%,
+    #f49867 102.67%
+  );
+  --gradient-bar: linear-gradient(
+    103.22deg,
+    #ae67fa -13.86%,
+    #f49867 99.55%
+  );
 
   --color-bg: #eee6e6;
   --color-footer: #5f5653;
   --color-text: #000000;
   --color-bg2: #983e3e;
   --color-1: #a97a72;
+  --color-transparent-bg2: rgba(23, 21, 21, 0.5);
 }

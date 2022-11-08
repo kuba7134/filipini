@@ -13,17 +13,23 @@ import {
 } from "firebase/firestore";
 import { db, storage } from "../../firebase-config";
 import { ref, getDownloadURL } from "firebase/storage";
+import Skeleton from "@mui/material/Skeleton";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
 };
 
+const skeleton = (
+  <div className="aktualnosci-skeleton">
+    <Skeleton variant="rectangular" width={"100%"} height={340} />
+  </div>
+);
+
 const Aktualnosci = () => {
   const [aktualnosci, setAktualnosci] = useState("");
 
   useEffect(() => {
-    console.log("--------------------------------------------");
     const aktualnosciRef = collection(db, "aktualnosci");
     const q = query(
       aktualnosciRef,
@@ -34,28 +40,22 @@ const Aktualnosci = () => {
 
     const fetchData = async () => {
       const querySnapshot = await getDocs(q);
-
       querySnapshot.forEach(doc => {
-        console.log("doc added to aktualnosci");
         const item = doc.data();
         aktualnosci.push(item);
       });
 
       await Promise.all(
         aktualnosci.map(async item => {
-          await getDownloadURL(ref(storage, item.imageRef))
+          await getDownloadURL(ref(storage, item.thumbRef))
             .then(url => {
-              item.imageUrl = url;
-              console.log("Url added", item.title);
+              item.thumbUrl = url;
             })
             .catch(error => {
               return error;
             });
         })
       );
-
-      console.log(aktualnosci);
-
       setAktualnosci(aktualnosci);
     };
 
@@ -72,10 +72,20 @@ const Aktualnosci = () => {
     >
       <Headerao title={"Aktualności"} />
       <div className="aktualnosci-container">
-        {aktualnosci &&
-          aktualnosci.map(item => (
-            <SingleNews news={item} key={item.date} />
-          ))}
+        {aktualnosci
+          ? aktualnosci.map(item => (
+              <SingleNews news={item} key={item.date} />
+            ))
+          : [
+              skeleton,
+              skeleton,
+              skeleton,
+              skeleton,
+              skeleton,
+              skeleton,
+              skeleton,
+              skeleton,
+            ]}
       </div>
     </motion.div>
   );

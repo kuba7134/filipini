@@ -1,6 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import {
@@ -24,6 +29,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 const App = () => {
   const location = useLocation();
   const kontaktRef = useRef(null);
+  const { newsId } = useParams();
 
   return (
     <>
@@ -35,7 +41,7 @@ const App = () => {
             <Route path="/" element={<Homepage />} />
             <Route path="/aktualnosci" element={<Aktualnosci />} />
             <Route
-              path="/aktualnosci/:id"
+              path="/aktualnosci/:newsId"
               element={<SingleNewsPage />}
             />
             <Route path="/ogloszenia" element={<Ogloszenia />} />

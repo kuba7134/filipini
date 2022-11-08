@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { Button } from "@mui/material";
 import oratorium from "../resources/oratorium.jpg";
+import { AiOutlineArrowUp } from "react-icons/ai";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -68,7 +69,7 @@ const Oratorium = () => {
               onClick={() => setReadMore(!readMore)}
               variant="contained"
             >
-              /\
+              <AiOutlineArrowUp size={24} />
             </Button>
           ) : (
             <Button

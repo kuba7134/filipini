@@ -1,77 +1,81 @@
 import React from "react";
 import "./parafia.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Ksieza from "./ksieza/Ksieza";
-import Kancelaria from "./kancelaria/Kancelaria"
-import office from "./resources/office.png"
-import priest from "./resources/priest.png"
-import rys from "./resources/clock.png"
-import RysHistoryczny from "./rysHistoryczny/RysHistoryczny";
+import Kancelaria from "./kancelaria/Kancelaria";
+import office from "./resources/office.png";
 
+import rys from "./resources/clock.png";
+import RysHistoryczny from "./rysHistoryczny/RysHistoryczny";
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1 }
-}
-
+  visible: { opacity: 1 },
+};
 
 const Parafia = () => {
+  const content = useRef(null);
   const [parafia, setParafia] = useState("kancelaria");
   const renderSwitch = param => {
     switch (param) {
       case "kancelaria":
         return <Kancelaria key="kancelaria" />;
-      case "ksieza":
-        return <Ksieza key="ksieza" />;
       case "rysHistoryczny":
         return <RysHistoryczny key="rysHistoryczny" />;
       default:
-        return
+        return;
     }
   };
 
-  return <motion.div className="parafia"
-    variants={containerVariants}
-    initial="hidden"
-    animate="visible"
-    exit="hidden">
-    <div className="parafia-header header-page">
-      <h1>Parafia</h1>
-      <div className="sakramenty-buttons">
-        <div
-          onClick={() => {
-            setParafia("kancelaria");
-          }}
-          className="sakramenty-button"
-        >
-          <img src={office} alt="rings" />
-          <p>Kancelaria</p>
-        </div>
-        <div
-          onClick={() => {
-            setParafia("ksieza");
-          }}
-          className="sakramenty-button"
-        >
-          <img src={priest} alt="chrzest" />
-          <p>Księża</p>
-        </div>
-        <div
-          onClick={() => {
-            setParafia("rysHistoryczny");
-          }}
-          className="sakramenty-button"
-        >
-          <img style={{ width: 100 }} src={rys} alt="clock" />
-          <p>Historia</p>
+  return (
+    <motion.div
+      className="parafia"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+    >
+      <div className="parafia-header header-page">
+        <h1>Parafia</h1>
+        <div className="sakramenty-buttons">
+          <div
+            onClick={() => {
+              setParafia("kancelaria");
+              content.current.scrollIntoView();
+            }}
+            className={
+              parafia === "kancelaria"
+                ? "sakramenty-button sakramenty-button-active"
+                : "sakramenty-button"
+            }
+          >
+            <img src={office} alt="office" />
+            <p>Kancelaria</p>
+          </div>
+
+          <div
+            onClick={() => {
+              setParafia("rysHistoryczny");
+              content.current.scrollIntoView();
+            }}
+            className={
+              parafia === "rysHistoryczny"
+                ? "sakramenty-button sakramenty-button-active"
+                : "sakramenty-button"
+            }
+          >
+            <img style={{ width: 100 }} src={rys} alt="clock" />
+            <p>Historia</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div className="parafia-container">
-      <AnimatePresence mode="wait">{renderSwitch(parafia)}</AnimatePresence>
-    </div>
-  </motion.div>;
+      <div className="parafia-container" ref={content}>
+        <AnimatePresence mode="wait">
+          {renderSwitch(parafia)}
+        </AnimatePresence>
+      </div>
+    </motion.div>
+  );
 };
 
 export default Parafia;

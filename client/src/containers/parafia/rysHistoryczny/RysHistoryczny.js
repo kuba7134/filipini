@@ -5,6 +5,7 @@ import rys from "../resources/rys.jpg";
 import rys2 from "../resources/rys2.jpg";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { Button } from "@mui/material";
+import { AiOutlineArrowUp } from "react-icons/ai";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -78,7 +79,7 @@ const RysHistoryczny = () => {
               onClick={() => setReadMore(!readMore)}
               variant="contained"
             >
-              /\
+              <AiOutlineArrowUp size={24} />
             </Button>
           ) : (
             <Button

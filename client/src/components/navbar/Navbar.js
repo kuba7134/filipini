@@ -4,8 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Navbar = ({ kontaktRef }) => {
+const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [navbarBg, setNavbarBg] = useState(false);
   let menuRef = useRef();
 
   const navigate = useNavigate();
@@ -17,63 +18,99 @@ const Navbar = ({ kontaktRef }) => {
       }
     };
     document.addEventListener("mousedown", handler);
+
+    const changeBackground = () => {
+      if (window.scrollY >= 0.2 * window.innerHeight) {
+        setNavbarBg(true);
+      } else {
+        setNavbarBg(false);
+      }
+    };
+
+    window.addEventListener("scroll", changeBackground);
+
     return () => {
       document.removeEventListener("mousedown", handler);
+      window.removeEventListener("scroll", changeBackground);
     };
   });
 
   const list = (
     <>
-      <div className="navbar-links-button">
-        <p>
-          <Link
-            onClick={() => setToggleMenu(false)}
-            to="/aktualnosci"
-          >
-            Aktualności
-          </Link>
-        </p>
-      </div>
-      <p>
+      <motion.div
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
+        <Link onClick={() => setToggleMenu(false)} to="/aktualnosci">
+          <p>Aktualności</p>
+        </Link>
+      </motion.div>
+      <motion.div
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
         <Link onClick={() => setToggleMenu(false)} to="/ogloszenia">
-          Ogłoszenia
+          <p>Ogłoszenia</p>
         </Link>
-      </p>
-      <p>
+      </motion.div>
+      <motion.div
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
         <Link onClick={() => setToggleMenu(false)} to="/nabozenstwa">
-          Nabożeństwa
+          <p>Nabożeństwa</p>
         </Link>
-      </p>
-      <p>
+      </motion.div>
+      <motion.div
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
         <Link onClick={() => setToggleMenu(false)} to="/sakramenty">
-          Sakramenty
+          <p>Sakramenty</p>
         </Link>
-      </p>
-      <p>
+      </motion.div>
+      <motion.div
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
         <Link onClick={() => setToggleMenu(false)} to="/kongregacja">
-          Kongregacja
+          <p>Kongregacja </p>
         </Link>
-      </p>
-      <p>
+      </motion.div>
+
+      <motion.div
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
         <Link onClick={() => setToggleMenu(false)} to="/wspolnoty">
-          Wspólnoty
+          <p> Wspólnoty </p>
         </Link>
-      </p>
-      <p>
+      </motion.div>
+      <motion.div
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
         <Link onClick={() => setToggleMenu(false)} to="/parafia">
-          Parafia
+          <p> Parafia </p>
         </Link>
-      </p>
-      <p>
+      </motion.div>
+      <motion.div
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
         <Link onClick={() => setToggleMenu(false)} to="/kontakt">
-          Kontakt
+          <p> Kontakt</p>
         </Link>
-      </p>
+      </motion.div>
     </>
   );
 
   return (
-    <div className="navbar">
+    <div
+      className={
+        navbarBg ? "navbar-white navbar" : "navbar-transparent navbar"
+      }
+    >
       <div className="navbar-links">
         <div className="navbar-links-logo">
           <Link to="/">

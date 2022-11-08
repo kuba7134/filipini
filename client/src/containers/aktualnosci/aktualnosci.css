@@ -3,9 +3,17 @@
 } */
 
 .aktualnosci-container {
-  margin: 2rem;
+  margin: 2rem auto;
   display: flex;
-  gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1600px;
+}
+
+.aktualnosci-skeleton {
+  width: 330px;
+  flex-shrink: 1;
+  font-size: 1em;
+  margin: 0.5rem;
+  border-radius: 10px;
 }

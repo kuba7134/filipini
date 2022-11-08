@@ -31,7 +31,6 @@ const Slideshow = () => {
   );
 
   useEffect(() => {
-    console.log(images[src]);
     const imgInterval = setInterval(nextImg, 5000);
     return () => clearInterval(imgInterval);
   });

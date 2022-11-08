@@ -42,6 +42,7 @@
   min-width: 125px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  transition: all 200ms ease;
 }
 
 .sakramenty-button > img {
@@ -78,20 +79,25 @@
   justify-content: center;
   max-width: 1600px;
   margin: 2rem auto;
+  scroll-margin-top: 110px;
 }
 
 .sakramenty-button:hover {
   cursor: pointer;
+  background-color: var(--color-bg);
+  color: black;
+  transform: translateY(-5px);
 }
 
 .sakramenty-single {
   margin: auto;
   max-width: 1600px;
   align-items: center;
+  justify-content: center;
 }
 
 .sakramenty-single img {
-  box-shadow: 15px 15px var(--color-bg2);
+  box-shadow: 7px 7px var(--color-bg2);
 }
 
 .sakramenty h3 {
@@ -146,5 +152,16 @@
   }
   .sakramenty-button {
     margin: 0.15rem;
+  }
+}
+@media screen and (max-width: 1105px) {
+  .sakramenty-content {
+    scroll-margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sakramenty-content {
+    scroll-margin-top: 65px;
   }
 }

@@ -1,0 +1,22 @@
+.news-content-text {
+  max-width: 75ch;
+  margin: 1rem 0;
+}
+
+.news-content-top-date {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 1rem;
+}
+
+.news-content img {
+  width: 100%;
+  min-width: 300px;
+  max-width: 75ch;
+  max-height: 800px;
+}
+
+.skeleton {
+  width: 75ch;
+  gap: 3rem;
+}

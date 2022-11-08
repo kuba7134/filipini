@@ -47,7 +47,7 @@ const FormOgloszenia = () => {
         const docRef = await addDoc(collection(db, "ogloszenia"), {
           title,
           text: Object.values(ogloszenia),
-          date: date.get,
+          date: Date.now(),
           day: date.getDate(),
           month: date.getMonth(),
           year: date.getFullYear(),

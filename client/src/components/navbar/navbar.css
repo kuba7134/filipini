@@ -8,12 +8,27 @@
   z-index: 10;
 }
 
-.navbar-name {
+.navbar-white {
+  background-color: var(--color-bg);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.navbar-transparent .navbar-name {
   text-align: center;
   margin: 0.5rem;
-  border-radius: 4px;
+  border-radius: 18px;
   background-color: var(--color-transparent-bg2);
   color: white;
+  padding: 4px 8px;
+}
+
+.navbar-transparent .navbar-name:hover {
+  background-color: var(--color-bg2);
+}
+
+.navbar .navbar-name {
+  text-align: center;
+  margin: 0.5rem;
   padding: 4px 8px;
 }
 
@@ -48,16 +63,23 @@
   flex-grow: 1;
 }
 
-.navbar-links-list p {
-  margin: 0 0.5rem;
-  background-color: var(--color-transparent-bg2);
-  font-weight: 590;
-  color: white;
+.navbar .navbar-links-list p {
+  margin: 0 0.2rem;
   padding: 10px 5px;
-  border-radius: 4px;
+  font-weight: 600;
 }
 
-.navbar-links-list p:hover {
+.navbar-active .navbar-links-list p:hover {
+  background-color: none;
+}
+
+.navbar-transparent .navbar-links-list p {
+  background-color: var(--color-transparent-bg2);
+  color: white;
+  border-radius: 18px;
+}
+
+.navbar-transparent .navbar-links-list p:hover {
   background-color: var(--color-bg2);
 }
 
@@ -79,10 +101,22 @@
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-.navbar-menu {
-  margin-left: 1rem;
+.navbar .navbar-menu {
+  margin: 0 1rem;
   display: none;
+  font-weight: 600;
 }
+
+.navbar-transparent .navbar-menu {
+  background-color: var(--color-transparent-bg2);
+  color: white;
+}
+
+.navbar-white .navbar-menu {
+  background-color: none;
+  color: black;
+}
+
 .navbar-menu-svg-wrapper {
   height: 27px;
 }
@@ -91,10 +125,10 @@
   cursor: pointer;
   width: 27px;
   height: 27px;
-  margin-right: 10px;
 }
 
 .navbar-menu-container {
+  color: black;
   background-color: var(--color-bg);
   display: flex;
   gap: 30px;
@@ -116,9 +150,6 @@
   color: var(--color-bg);
 }
 @media screen and (max-width: 1300px) {
-  .navbar {
-    font-size: 0.95em;
-  }
   .navbar-przy {
     display: none;
   }
@@ -131,27 +162,35 @@
     width: 60px;
     height: 60px;
   }
+
+  .navbar-links-list {
+    font-size: 0.9em;
+  }
+
   .navbar-name {
     text-align: center;
     margin: 0 0.2rem;
+    font-size: 0.95em;
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1105px) {
   .navbar {
+    font-size: 0.95em;
     height: 90px;
   }
+
   .navbar-links-list {
     display: none;
   }
-
-  .navbar-menu {
+  .navbar .navbar-menu {
     display: flex;
   }
 
-  .navbar-links {
-    padding: 1rem;
+  .navbar-menu-svg-wrapper {
+    height: 27px;
   }
+
   .navbar-przy {
     display: inline-block;
   }

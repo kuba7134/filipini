@@ -1,6 +1,6 @@
 import React from "react";
 import "./sakramenty.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Chrzest from "./chrzest/Chrzest";
 import Slub from "./slub/Slub";
@@ -15,6 +15,7 @@ const containerVariants = {
 };
 
 const Sakramenty = () => {
+  const content = useRef(null);
   const [sakrament, setSakrament] = useState("chrzest");
   const renderSwitch = param => {
     switch (param) {
@@ -23,7 +24,7 @@ const Sakramenty = () => {
       case "slub":
         return <Slub key="slub" />;
       case "pokuta":
-        return <Pokuta key="slub" />;
+        return <Pokuta key="pokuta" />;
       default:
     }
   };
@@ -42,8 +43,13 @@ const Sakramenty = () => {
           <div
             onClick={() => {
               setSakrament("chrzest");
+              content.current.scrollIntoView();
             }}
-            className="sakramenty-button"
+            className={
+              sakrament === "chrzest"
+                ? "sakramenty-button sakramenty-button-active"
+                : "sakramenty-button"
+            }
           >
             <img src={drop} alt="chrzest" />
             <p>Chrzest</p>
@@ -51,8 +57,13 @@ const Sakramenty = () => {
           <div
             onClick={() => {
               setSakrament("slub");
+              content.current.scrollIntoView();
             }}
-            className="sakramenty-button"
+            className={
+              sakrament === "slub"
+                ? "sakramenty-button sakramenty-button-active"
+                : "sakramenty-button"
+            }
           >
             <img src={rings} alt="rings" />
             <p>Ślub</p>
@@ -60,15 +71,20 @@ const Sakramenty = () => {
           <div
             onClick={() => {
               setSakrament("pokuta");
+              content.current.scrollIntoView();
             }}
-            className="sakramenty-button"
+            className={
+              sakrament === "pokuta"
+                ? "sakramenty-button sakramenty-button-active"
+                : "sakramenty-button"
+            }
           >
             <img src={konfesjonal} alt="rings" />
             <p>Pokuta</p>
           </div>
         </div>
       </div>
-      <div className="sakramenty-content">
+      <div className="sakramenty-content" ref={content}>
         <AnimatePresence mode="wait">
           {renderSwitch(sakrament)}
         </AnimatePresence>

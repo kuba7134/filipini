@@ -32,6 +32,7 @@ ul {
   display: flex;
   flex-direction: column;
   width: fit-content;
+  max-width: 75ch;
 }
 
 .title h2 {
@@ -90,7 +91,7 @@ ul {
   height: 393.75px;
   position: relative;
   margin: 2rem 1rem;
-  box-shadow: 15px 15px var(--color-bg2),
+  box-shadow: 7px 7px var(--color-bg2),
     rgba(0, 0, 0, 0.56) 0px 22px 80px 13px;
 }
 

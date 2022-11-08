@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./wspolnoty.css";
 import { motion, AnimatePresence } from "framer-motion";
 import Azyl from "./azyl/Azyl";
@@ -11,6 +11,7 @@ import Ministrant from "./ministrant/Ministrant";
 import Przystan12 from "./przystan12/Przystan12";
 import Gma from "./gma/Gma";
 import Osb from "./osb/Osb";
+import Rozaniec from "./rozaniec/Rozaniec";
 import azyl from "./resources/azyl.png";
 import caritas from "./resources/caritas.png";
 import dom from "./resources/dom.png";
@@ -21,6 +22,7 @@ import ministrant from "./resources/ministrant.png";
 import pray from "./resources/pray.png";
 import bible from "./resources/bible.png";
 import przystan12 from "./resources/przystan12.png";
+import rozaniec from "./resources/rosary.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,6 +30,7 @@ const containerVariants = {
 };
 
 const Wspolnoty = () => {
+  const content = useRef(null);
   const [wspolnoty, setWspolnoty] = useState("oratoriumMl");
   const renderSwitch = param => {
     switch (param) {
@@ -51,6 +54,8 @@ const Wspolnoty = () => {
         return <Gma key="gma" />;
       case "przystan12":
         return <Przystan12 key="przystan12" />;
+      case "rozaniec":
+        return <Rozaniec key="rozaniec" />;
       default:
         return;
     }
@@ -69,6 +74,7 @@ const Wspolnoty = () => {
           <div
             onClick={() => {
               setWspolnoty("azyl");
+              content.current.scrollIntoView();
             }}
             className={
               wspolnoty === "azyl"
@@ -82,6 +88,7 @@ const Wspolnoty = () => {
           <div
             onClick={() => {
               setWspolnoty("caritas");
+              content.current.scrollIntoView();
             }}
             className={
               wspolnoty === "caritas"
@@ -95,6 +102,7 @@ const Wspolnoty = () => {
           <div
             onClick={() => {
               setWspolnoty("domowyKosciol");
+              content.current.scrollIntoView();
             }}
             className={
               wspolnoty === "domowyKosciol"
@@ -108,6 +116,7 @@ const Wspolnoty = () => {
           <div
             onClick={() => {
               setWspolnoty("gma");
+              content.current.scrollIntoView();
             }}
             className={
               wspolnoty === "gma"
@@ -121,6 +130,7 @@ const Wspolnoty = () => {
           <div
             onClick={() => {
               setWspolnoty("ministrant");
+              content.current.scrollIntoView();
             }}
             className={
               wspolnoty === "ministrant"
@@ -134,6 +144,7 @@ const Wspolnoty = () => {
           <div
             onClick={() => {
               setWspolnoty("oratorium");
+              content.current.scrollIntoView();
             }}
             className={
               wspolnoty === "oratorium"
@@ -147,6 +158,7 @@ const Wspolnoty = () => {
           <div
             onClick={() => {
               setWspolnoty("oratoriumMl");
+              content.current.scrollIntoView();
             }}
             className={
               wspolnoty === "oratoriumMl"
@@ -160,6 +172,7 @@ const Wspolnoty = () => {
           <div
             onClick={() => {
               setWspolnoty("osb");
+              content.current.scrollIntoView();
             }}
             className={
               wspolnoty === "osb"
@@ -173,6 +186,7 @@ const Wspolnoty = () => {
           <div
             onClick={() => {
               setWspolnoty("przystan12");
+              content.current.scrollIntoView();
             }}
             className={
               wspolnoty === "przystan12"
@@ -185,7 +199,22 @@ const Wspolnoty = () => {
           </div>
           <div
             onClick={() => {
+              setWspolnoty("rozaniec");
+              content.current.scrollIntoView();
+            }}
+            className={
+              wspolnoty === "rozaniec"
+                ? "sakramenty-button sakramenty-button-active"
+                : "sakramenty-button"
+            }
+          >
+            <img src={rozaniec} alt="rozaniec" />
+            <p>Kółka Różańcowe</p>
+          </div>
+          <div
+            onClick={() => {
               setWspolnoty("schola");
+              content.current.scrollIntoView();
             }}
             className={
               wspolnoty === "schola"
@@ -198,7 +227,7 @@ const Wspolnoty = () => {
           </div>
         </div>
       </div>
-      <div className="parafia-container">
+      <div className="parafia-container" ref={content}>
         <AnimatePresence mode="wait">
           {renderSwitch(wspolnoty)}
         </AnimatePresence>

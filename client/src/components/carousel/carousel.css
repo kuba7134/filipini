@@ -10,7 +10,7 @@
   align-items: center;
   background-color: black;
   overflow: hidden;
-  box-shadow: 15px 15px var(--color-bg2);
+  box-shadow: 7px 7px var(--color-bg2);
   flex-basis: calc(750px - 5rem);
   flex-shrink: 1;
 }

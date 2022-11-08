@@ -3,23 +3,18 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
   row-gap: 3rem;
-  margin: 3rem;
+  margin: 2rem auto;
   justify-items: center;
   max-width: 1500px;
   width: 100%;
 }
 
+.sakramenty-slub-tekst {
+  max-width: 75ch;
+}
+
 .sakramenty-slub img {
   width: 80%;
-}
-
-.sakramenty-slub-tekst {
-  padding: 2rem;
-  max-width: 65ch;
-}
-
-.sakramenty-slub-tekst p {
-  margin: 1rem 0;
 }
 
 .sakramenty-slub-tekst ul {

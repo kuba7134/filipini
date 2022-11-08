@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./ogloszenia.css";
 import { motion } from "framer-motion";
 import { Headerao } from "../../components";
@@ -18,11 +18,10 @@ const containerVariants = {
 
 const Ogloszenia = () => {
   const [ogloszenia2, setOgloszenia2] = useState("");
-
-  console.log(process.env.REACT_APP_FIREBASE_APIKEY);
+  const [display, setDisplay] = useState(0);
+  const ogloszenia = useRef();
 
   useEffect(() => {
-    console.log("fetch");
     const ogloszenia = [];
     const ogloszeniaRef = collection(db, "ogloszenia");
     const q = query(
@@ -33,9 +32,7 @@ const Ogloszenia = () => {
     const fetchData = async () => {
       try {
         const querySnapshot = await getDocs(q);
-        console.log(querySnapshot);
         querySnapshot.forEach(doc => {
-          console.log(`${doc.id} => ${doc.data()}`);
           ogloszenia.push(doc.data());
         });
       } catch (error) {
@@ -58,35 +55,42 @@ const Ogloszenia = () => {
       <div className="ogloszenia-container">
         {ogloszenia2 && (
           <>
-            <div className="ogloszenia-container-current">
+            <div
+              className="ogloszenia-container-current ogloszenia-container-box"
+              ref={ogloszenia}
+            >
               <div className="ogloszenia-container-current-top">
-                <p>
-                  {[
-                    ogloszenia2[0].day,
-                    ".",
-                    ogloszenia2[0].month,
-                    ".",
-                    ogloszenia2[0].year,
-                  ]}
+                <p className="ogloszenia-container-current-date">
+                  {ogloszenia2[display].day}.&nbsp;
+                  {ogloszenia2[display].month}.&nbsp;
+                  {ogloszenia2[display].year}
                 </p>
-                <h2>{ogloszenia2[0].title}</h2>
+                <h2>{ogloszenia2[display].title}</h2>
               </div>
               <ul>
-                {ogloszenia2[0].text.map((item, index) => (
+                {ogloszenia2[display].text.map((item, index) => (
                   <li key={index} className="ogloszenia-single-text">
-                    {item}
+                    <p>{item}</p>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="ogloszenia-container-all">
+            <div className="ogloszenia-container-all ogloszenia-container-box">
               <h2>Poprzednie ogłoszenia</h2>
               {ogloszenia2.map((item, index) => (
                 <div
                   key={index}
                   className="ogloszenia-container-all-single"
+                  onClick={() => {
+                    setDisplay(index);
+                    ogloszenia.current.scrollIntoView();
+                  }}
                 >
-                  <p>{item.date}</p>
+                  <p>
+                    {item.day}.&nbsp;
+                    {item.month}.&nbsp;
+                    {item.year}
+                  </p>
                   <h3>{item.title}</h3>
                 </div>
               ))}

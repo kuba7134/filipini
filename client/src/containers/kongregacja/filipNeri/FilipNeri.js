@@ -2,6 +2,7 @@ import React from "react";
 import "./filipNeri.css";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { AiOutlineArrowUp } from "react-icons/ai";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { Button } from "@mui/material";
 import fneriBig from "../resources/fneri-big.png";
@@ -87,7 +88,7 @@ const FilipNeri = () => {
               onClick={() => setReadMore(!readMore)}
               variant="contained"
             >
-              /\
+              <AiOutlineArrowUp size={24} />
             </Button>
           ) : (
             <Button

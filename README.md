@@ -1,3 +1,4 @@
 # filipini
 
-https://filipini.netlify.app
+
+http://filipini-tomaszow.pl/

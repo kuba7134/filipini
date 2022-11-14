@@ -20,16 +20,24 @@ const containerVariants = {
   visible: { opacity: 1 },
 };
 
-const skeleton = (
-  <div className="aktualnosci-skeleton">
-    <Skeleton variant="rectangular" width={"100%"} height={340} />
-  </div>
-);
+const skeleton = key => {
+  return (
+    <div className="aktualnosci-skeleton" key={key}>
+      <Skeleton variant="rectangular" width={"100%"} height={340} />
+    </div>
+  );
+};
 
 const Aktualnosci = () => {
   const [aktualnosci, setAktualnosci] = useState("");
+  const [skeletons, setSkeletons] = useState([]);
 
   useEffect(() => {
+    const skeletons = [];
+    for (let i = 0; i < 6; i++) {
+      skeletons.push(skeleton(i));
+    }
+    setSkeletons(skeletons);
     const aktualnosciRef = collection(db, "aktualnosci");
     const q = query(
       aktualnosciRef,
@@ -72,20 +80,21 @@ const Aktualnosci = () => {
     >
       <Headerao title={"Aktualności"} />
       <div className="aktualnosci-container">
-        {aktualnosci
-          ? aktualnosci.map(item => (
-              <SingleNews news={item} key={item.date} />
-            ))
-          : [
-              skeleton,
-              skeleton,
-              skeleton,
-              skeleton,
-              skeleton,
-              skeleton,
-              skeleton,
-              skeleton,
-            ]}
+        {
+          aktualnosci
+            ? aktualnosci.map(item => (
+                <SingleNews news={item} key={item.date} />
+              ))
+            : skeletons
+
+          // skeleton,
+          // skeleton,
+          // skeleton,
+          // skeleton,
+          // skeleton,
+          // skeleton,
+          // skeleton,
+        }
       </div>
     </motion.div>
   );

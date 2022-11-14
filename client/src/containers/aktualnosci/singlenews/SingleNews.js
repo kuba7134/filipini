@@ -16,28 +16,37 @@ const SingleNews = props => {
       if (cutat !== -1) string = string.substring(0, cutat) + "...";
       return string;
     };
-    setContent(trimmer(props.news.content, 100));
-    setTitle(trimmer(props.news.title, 70));
-  }, []);
+    setContent(trimmer(props.news.content, 500));
+    setTitle(trimmer(props.news.title, 72));
+  }, [props.news.content, props.news.title]);
   return (
     <div
       onClick={() => {
         navigate(`${props.news.id}`);
       }}
-      className="single-news"
+      className={
+        props.news.vertical
+          ? "single-news single-news-vertical"
+          : "single-news"
+      }
+      key={props.news.id}
     >
+      <img src={props.news.thumbUrl} alt="news-img" />
       <div className="single-news-top">
         <div className="single-news-date">
-          <p>{props.news.day}.&nbsp;</p>
-          <p>{props.news.month}.&nbsp;</p>
+          <p>{props.news.day}-</p>
+          <p>{props.news.month}-</p>
           <p>{props.news.year}</p>
         </div>
-        <h3>{title}</h3>
+        <div className="single-news-top-title">
+          <h3>{title}</h3>
+        </div>
       </div>
-      <img src={props.news.thumbUrl} alt="news-img" />
-      <div className="single-news-content">
-        <p>{content}</p>
-      </div>
+      {!props.news.vertical && (
+        <div className="single-news-content">
+          <p>{content}</p>
+        </div>
+      )}
     </div>
   );
 };

@@ -2,10 +2,22 @@ import React from "react";
 import "./kancelaria.css";
 import kancelariaimg from "../resources/kancelaria.jpg";
 import { motion } from "framer-motion";
+import { IoIosCopy } from "react-icons/io";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
+};
+
+const copyNumber = () => {
+  navigator.clipboard
+    .writeText("91124017181111000010981843")
+    .then(() => {
+      alert("Skopiowano numer rachunku bankowego.");
+    })
+    .catch(() => {
+      alert("something went wrong");
+    });
 };
 
 const kancelaria = () => {
@@ -32,9 +44,13 @@ const kancelaria = () => {
         <br />
         <h3>W sprawach nagłych o każdej porze</h3>
         <br />
-        <h3>Konto:</h3>
-        <p>Bank Pekao S.A. w Tomaszowie Maz.</p>
-        <p>91 1240 1718 1111 0000 1098 1843</p>
+        <div className="kancelaria-konto">
+          <p style={{ fontWeight: 700 }}>Konto:</p>
+          <p>Bank Pekao S.A. w Tomaszowie Maz.</p>
+          <p className="footer-konto-number" onClick={copyNumber}>
+            91 1240 1718 1111 0000 1098 1843 <IoIosCopy />
+          </p>
+        </div>
       </div>
     </motion.div>
   );

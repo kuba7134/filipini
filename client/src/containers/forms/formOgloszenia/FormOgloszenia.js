@@ -49,7 +49,7 @@ const FormOgloszenia = () => {
           text: Object.values(ogloszenia),
           date: Date.now(),
           day: date.getDate(),
-          month: date.getMonth(),
+          month: date.getMonth() + 1,
           year: date.getFullYear(),
         });
         console.log("Document written with ID: ", docRef.id);

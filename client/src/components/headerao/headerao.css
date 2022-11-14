@@ -9,10 +9,18 @@
   color: white;
   font-size: 2rem;
   width: 100%;
+  text-align: center;
+}
+
+.headerao-icons {
+  padding-bottom: 20px;
+}
+
+.headarao-icons a {
+  width: 100px;
 }
 
 .headerao h1 {
-  margin-left: 3rem;
   text-align: center;
 }
 

@@ -8,6 +8,8 @@
 
 #filipneri-fneri-img {
   box-shadow: none;
+  max-height: 600px;
+  object-fit: contain;
 }
 
 .filipneri-read-more {
@@ -31,5 +33,10 @@
 
   #filipneri-fneri-img {
     max-width: 55ch;
+    order: 1;
+  }
+
+  .filipneri-read-more {
+    order: 2;
   }
 }

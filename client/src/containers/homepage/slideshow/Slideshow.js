@@ -40,10 +40,11 @@ const Slideshow = () => {
       <motion.img
         key={images[src]}
         src={images[src]}
+        alt="slideshow homepage"
         className="homepage-header-img"
         initial={{ x: 300, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ ease: "easeOut", duration: 2 }}
+        transition={{ ease: "easeOut", duration: 1 }}
         exit={{ x: -300, opacity: 0 }}
       />
     </AnimatePresence>

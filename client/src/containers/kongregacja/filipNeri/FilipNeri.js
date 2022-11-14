@@ -40,23 +40,42 @@ const FilipNeri = () => {
           zaliczany do wielkich mistyków chrześcijaństwa, przez swój
           oryginalny sposób życia i właściwe swojej niezależnej
           osobowości zachowanie się, bywał niestety często źle
-          rozumiany i w fałszywym świetle przedstawiany
-          sw._Fpotomnych. Niektóre fakty z jego życia urosły do
-          legendy na miarę "Fioretti" św. Franciszka. Biografowie ze
-          stygmatyka Ducha św. i męża pokory i prostoty, człowieka
-          florenckiego humoru i radości, uczynili z niego dziwaka,
-          wesołka, dowcipnisia i ekstrawaganta. Ten mit do dziś
-          pokutuje w umysłach tych, którzy znają Filipa pobieżnie z
-          kilku jego żartów urządzonych mieszkańcom Wiecznego Miasta,
-          albo poznali go z kart mdłych żywotów. Filip, mimo swej
-          popularności zwłaszcza w Rzymie, jest świętym mało znanym.
-          Przyczyniło się do tego między innymi i to, że w swej
-          pokorze uważając się za sługę nieużytecznego, nie napisał
-          żadnych dzieł, jak np. jemu współcześni: św. Ignacy, św.
-          Teresa, czy św. Jan od Krzyża, a to co napisał i co mogłoby
-          ukazać jego świętość, jego szkołę duchowości i co mogłoby
-          być świadectwem życia, kazał spalić przed swoja śmiercią.
+          rozumiany i w fałszywym świetle przedstawiany . Niektóre
+          fakty z jego życia urosły do legendy na miarę "Fioretti" św.
+          Franciszka. Biografowie ze stygmatyka Ducha św. i męża
+          pokory i prostoty, człowieka florenckiego humoru i radości,
+          uczynili z niego dziwaka, wesołka, dowcipnisia i
+          ekstrawaganta. Ten mit do dziś pokutuje w umysłach tych,
+          którzy znają Filipa pobieżnie z kilku jego żartów
+          urządzonych mieszkańcom Wiecznego Miasta, albo poznali go z
+          kart mdłych żywotów. Filip, mimo swej popularności zwłaszcza
+          w Rzymie, jest świętym mało znanym. Przyczyniło się do tego
+          między innymi i to, że w swej pokorze uważając się za sługę
+          nieużytecznego, nie napisał żadnych dzieł, jak np. jemu
+          współcześni: św. Ignacy, św. Teresa, czy św. Jan od Krzyża,
+          a to co napisał i co mogłoby ukazać jego świętość, jego
+          szkołę duchowości i co mogłoby być świadectwem życia, kazał
+          spalić przed swoja śmiercią.
         </p>
+      </div>
+      <img
+        src={fneriBig}
+        alt="ślub"
+        className="fneriImg"
+        id="filipneri-fneri-img"
+      />
+      <div className="video-wrapper">
+        <iframe
+          // width="560"
+          // height="315"
+          src="https://www.youtube.com/embed/9WbOG0RZcT8"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div className="sakramenty-slub-tekst">
         <p>
           Ojczyzną Filipa była Florencja, miasto Dantego, Michała
           Anioła, Medyceuszy, ale także miejsce działalności słynnego
@@ -80,7 +99,6 @@ const FilipNeri = () => {
           radości.
         </p>
       </div>
-      <img id="filipneri-fneri-img" src={fneriBig} alt="ślub" />
       <div className="filipneri-read-more">
         <ThemeProvider theme={theme}>
           {readMore ? (

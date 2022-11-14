@@ -4,21 +4,21 @@ import {
   BsInstagram,
   BsFacebook,
 } from "react-icons/bs";
-import { IoIosMail, IoIosCopy } from "react-icons/io";
+import { IoIosMail } from "react-icons/io";
 import { SiGooglemaps } from "react-icons/si";
 import { forwardRef } from "react";
 
 const Footer = forwardRef((props, ref) => {
-  const copyNumber = () => {
-    navigator.clipboard
-      .writeText("91124017181111000010981843")
-      .then(() => {
-        alert("Skopiowano numer rachunko bankowego.");
-      })
-      .catch(() => {
-        alert("something went wrong");
-      });
-  };
+  // const copyNumber = () => {
+  //   navigator.clipboard
+  //     .writeText("91124017181111000010981843")
+  //     .then(() => {
+  //       alert("Skopiowano numer rachunku bankowego.");
+  //     })
+  //     .catch(() => {
+  //       alert("something went wrong");
+  //     });
+  // };
 
   return (
     <div ref={ref} className="footer">
@@ -50,12 +50,14 @@ const Footer = forwardRef((props, ref) => {
             <a
               href="https://www.instagram.com/przystandwunastu/"
               target="blank"
+              aria-label="Instagram przystani dwunastu"
             >
               <BsInstagram />
             </a>
             <a
               href="https://www.facebook.com/FilipiniTomaszow"
               target="blank"
+              aria-label="facebook parafialny"
             >
               <BsFacebook />
             </a>
@@ -102,13 +104,6 @@ const Footer = forwardRef((props, ref) => {
             Przystań Dwunastu
           </a>
         </div>
-      </div>
-      <div className="footer-konto">
-        <p style={{ fontWeight: 700 }}>Konto:</p>
-        <p>Bank Pekao S.A. w Tomaszowie Maz.</p>
-        <p className="footer-konto-number" onClick={copyNumber}>
-          91 1240 1718 1111 0000 1098 1843 <IoIosCopy />
-        </p>
       </div>
     </div>
   );

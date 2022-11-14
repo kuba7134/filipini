@@ -11,23 +11,21 @@ const containerVariants = {
 
 const OratoriumMl = () => {
   return (
-    <>
+    <div className="przystan12">
+      <div className="title title-top title-top-wspolnoty">
+        <div className="fit-content">
+          <h2>Oratorium Młodych</h2>
+          <div className="title-separator"></div>
+        </div>
+      </div>
       <motion.div
-        className="wspolnoty-single sakramenty-chrzest sakramenty-single"
+        className="space-between wspolnoty-single sakramenty-chrzest sakramenty-single"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         exit="hidden"
       >
-        <div className="title title-top">
-          <h2>Oratorium Młodych</h2>
-          <div className="title-separator"></div>
-        </div>
         <div className="wspolnoty-tekst sakramenty-chrzest-tekst">
-          <div className="title-with-top">
-            <h2>Oratorium Młodych</h2>
-            <div className="title-separator"></div>
-          </div>
           <div className="wspolnoty-quote-box">
             <p>
               „Jednym z ważniejszych obszarów, w których nasza
@@ -74,7 +72,7 @@ const OratoriumMl = () => {
         </div>
         <Carousel images={images} />
       </motion.div>
-    </>
+    </div>
   );
 };
 

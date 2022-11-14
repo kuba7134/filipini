@@ -50,11 +50,9 @@ ul {
 }
 
 .title-top {
-  display: none;
   flex-direction: column;
   width: fit-content;
-  width: 100%;
-  max-width: 65ch;
+  align-self: flex-start;
 }
 
 .title-top .title-separator {
@@ -82,10 +80,6 @@ ul {
   width: 100%;
 }
 
-.header-page h1 {
-  margin-left: 3rem;
-}
-
 .video-wrapper {
   width: 700px;
   height: 393.75px;
@@ -105,6 +99,11 @@ ul {
 .text-no-wrap {
   white-space: nowrap;
 }
+
+.fit-content {
+  width: fit-content;
+}
+
 @media screen and (max-width: 1400px) {
   .title-top {
     order: -2;
@@ -121,7 +120,7 @@ ul {
   }
 
   .video-wrapper {
-    width: 100%;
+    width: calc(100% - 1rem);
     padding-bottom: 56%;
     height: auto;
     position: relative;

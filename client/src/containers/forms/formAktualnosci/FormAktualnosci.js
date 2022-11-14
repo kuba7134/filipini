@@ -12,6 +12,7 @@ const FormAktualnosci = () => {
     content: "",
     img: "",
     imgThumb: "",
+    vertical: false,
   });
   console.log(post);
 
@@ -60,7 +61,7 @@ const FormAktualnosci = () => {
         thumbRef: pathThumb,
         date: Date.now(),
         day: date.getDate(),
-        month: date.getMonth(),
+        month: date.getMonth() + 1,
         year: date.getFullYear(),
       });
       console.log("Document written with ID: ", docRef.id);
@@ -106,6 +107,16 @@ const FormAktualnosci = () => {
           id="img"
           onChange={onChange}
         />
+        <button
+          onClick={() => {
+            setPost(prevState => ({
+              ...prevState,
+              vertical: !post.vertical,
+            }));
+          }}
+        >
+          Pionowe zdj: {post.vertical ? "tak" : "nie"}
+        </button>
         <textarea
           type="text"
           placeholder="tekst"
@@ -120,7 +131,7 @@ const FormAktualnosci = () => {
             }))
           }
         />
-        <button>Wyślij</button>
+        <button type="submit">Wyślij</button>
       </form>
       {/* <img src={post.img.img} alt="uploadedImage"></img> */}
     </div>

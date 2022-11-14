@@ -40,7 +40,7 @@ const DomowyKosciol = () => {
           </p>
           <p>Opiekunami kręgów są: </p>
           <ul className="wspolnoty-quote-box-list">
-            <li>ks. Sławomir Bogusz Cor,</li>
+            <li>ks. Sławomir Bogusz COr,</li>
             <li>ks. Grzegorz Chirk COr”</li>
           </ul>
           <p className="wspolnoty-quote-box-author">

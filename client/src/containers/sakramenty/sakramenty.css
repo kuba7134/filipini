@@ -22,10 +22,12 @@
 .sakramenty-buttons {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
   padding: 2rem;
   padding-top: 4rem;
   width: 100%;
   justify-content: center;
+  max-width: 1600px;
 }
 
 .sakramenty-button {
@@ -162,6 +164,6 @@
 
 @media screen and (max-width: 700px) {
   .sakramenty-content {
-    scroll-margin-top: 65px;
+    scroll-margin-top: 75px;
   }
 }

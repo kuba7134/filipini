@@ -21,8 +21,8 @@ const containerVariants = {
 };
 
 const SingleNewsPage = () => {
-  let { newsId } = useParams();
   const [aktualnosc, setAktualnosc] = useState("");
+  let { newsId } = useParams();
 
   useEffect(() => {
     const aktualnosciRef = collection(db, "aktualnosci");
@@ -48,7 +48,7 @@ const SingleNewsPage = () => {
       setAktualnosc(aktualnosc);
     };
     fetchData();
-  }, []);
+  }, [newsId]);
 
   return (
     <motion.div
@@ -88,8 +88,8 @@ const SingleNewsPage = () => {
           <div className="news-content parafia-container">
             <div className="news-content-top">
               <div className="news-content-top-date single-news-date">
-                <p>{aktualnosc.day}.&nbsp;</p>
-                <p>{aktualnosc.month}.&nbsp;</p>
+                <p>{aktualnosc.day}-</p>
+                <p>{aktualnosc.month}-</p>
                 <p>{aktualnosc.year}</p>
               </div>
               <div className="title">

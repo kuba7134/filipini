@@ -80,7 +80,7 @@ const Sakramenty = () => {
             }
           >
             <img src={konfesjonal} alt="rings" />
-            <p>Pokuta</p>
+            <p>Spowiedź święta</p>
           </div>
         </div>
       </div>

@@ -12,42 +12,46 @@ const Content = () => {
           <div className="title-separator"></div>
         </div>
         <div className="content-hours-lists">
-          <ul>
+          <div className="content-hours-list">
             <h3>Niedziela</h3>
-            <li>
-              <span className="content-hours-list-span">7:30</span> -
-              dla wszystkich
-            </li>
-            <li>
-              <span className="content-hours-list-span">9:00</span> -
-              dla wszystkich
-            </li>
-            <li>
-              <span className="content-hours-list-span">11:00</span> -
-              dla dzieci
-            </li>
-            <li>
-              <span className="content-hours-list-span">12.30</span> -
-              dla wszystkich
-            </li>
-            <li>
-              <span className="content-hours-list-span">18.00</span> -
-              dla wszystkich
-            </li>
-            <li>
-              <span className="content-hours-list-span">19.30</span> -
-              Msza święta "ostatniej szansy"
-            </li>
-          </ul>
-          <ul>
+            <ul>
+              <li>
+                <span className="content-hours-list-span">7:30</span>{" "}
+                - dla wszystkich
+              </li>
+              <li>
+                <span className="content-hours-list-span">9:00</span>{" "}
+                - dla wszystkich
+              </li>
+              <li>
+                <span className="content-hours-list-span">11:00</span>{" "}
+                - dla dzieci
+              </li>
+              <li>
+                <span className="content-hours-list-span">12.30</span>{" "}
+                - dla wszystkich
+              </li>
+              <li>
+                <span className="content-hours-list-span">18.00</span>{" "}
+                - dla wszystkich
+              </li>
+              <li>
+                <span className="content-hours-list-span">19.30</span>{" "}
+                - Msza święta "ostatniej szansy"
+              </li>
+            </ul>
+          </div>
+          <div className="content-hours-list">
             <h3>Dni powszednie</h3>
-            <li>
-              <span className="content-hours-list-span">7:00</span>
-            </li>
-            <li>
-              <span className="content-hours-list-span">18:00</span>
-            </li>
-          </ul>
+            <ul>
+              <li>
+                <span className="content-hours-list-span">7:00</span>
+              </li>
+              <li>
+                <span className="content-hours-list-span">18:00</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

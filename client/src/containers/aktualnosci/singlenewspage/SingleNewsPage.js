@@ -14,7 +14,7 @@ import {
 import { db, storage } from "../../../firebase-config";
 import { ref, getDownloadURL } from "firebase/storage";
 import Skeleton from "@mui/material/Skeleton";
-
+import Carousel from "../../../components/carousel/Carousel";
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
@@ -97,7 +97,12 @@ const SingleNewsPage = () => {
                 <div className="title-separator"></div>
               </div>
             </div>
-            <img src={aktualnosc.imageUrl} alt="aktualność"></img>
+            {aktualnosc.carousel ? (
+              <div>carousel</div>
+            ) : (
+              <img src={aktualnosc.imageUrl} alt="aktualność"></img>
+            )}
+
             <div className="news-content-text">
               {aktualnosc.content}
             </div>

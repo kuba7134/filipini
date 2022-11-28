@@ -11,24 +11,26 @@
 }
 
 .homepage-img-container {
-  position: relative;
   width: 100%;
+  position: relative;
   height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .homepage-header-img {
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  position: absolute;
+  position: fixed;
   top: 0px;
+  z-index: -1;
 }
 
 .homepage-content-container {
   display: flex;
-  max-width: 1600px;
-  margin: 2rem auto;
+  width: 100%;
+  padding: 2rem;
+  background-color: var(--color-bg);
 }
 
 .homepage-content-container-sidebar {

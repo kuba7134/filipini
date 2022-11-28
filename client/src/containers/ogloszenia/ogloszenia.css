@@ -60,6 +60,11 @@
   color: white;
 }
 
+.ogloszenia-container-all-single-current {
+  background-color: var(--color-bg2);
+  color: white;
+}
+
 .ogloszenia-container-current-top {
   display: flex;
   flex-direction: column;

@@ -72,6 +72,12 @@ const FormOgloszenia = () => {
           value={title}
           onChange={e => setTitle(e.target.value)}
         />
+        <input
+          type="text"
+          placeholder="ogloszenia"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+        />
         {ogloszenie().map(item => item)}
         <button>Wyślij ogłoszenia</button>
       </form>

@@ -28,13 +28,13 @@ const ksieza = () => {
           <br /> - Superior i Proboszcz
         </h3>
       </div>
+            <div className="ksieza-single">
+        <img src={bogusz} alt="ks. Sławomir Bogusz" />
+        <h3>ks. Sławomir Bogusz COr</h3>
+      </div>
       <div className="ksieza-single">
         <img src={wojtunik} alt="ks. Wacław Wojtunik" />
         <h3>ks. Wacław Wojtunik COr</h3>
-      </div>
-      <div className="ksieza-single">
-        <img src={bogusz} alt="ks. Sławomir Bogusz" />
-        <h3>ks. Sławomir Bogusz COr</h3>
       </div>
       <div className="ksieza-single">
         <img src={stepien} alt="ks. Piotr Stępień" />

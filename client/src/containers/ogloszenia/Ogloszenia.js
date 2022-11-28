@@ -76,11 +76,15 @@ const Ogloszenia = () => {
               </ul>
             </div>
             <div className="ogloszenia-container-all ogloszenia-container-box">
-              <h2>Poprzednie ogłoszenia</h2>
+              <h2>Wszystkie ogłoszenia</h2>
               {ogloszenia2.map((item, index) => (
                 <div
                   key={index}
-                  className="ogloszenia-container-all-single"
+                  className={
+                    index === display
+                      ? "ogloszenia-container-all-single ogloszenia-container-all-single-current"
+                      : "ogloszenia-container-all-single"
+                  }
                   onClick={() => {
                     setDisplay(index);
                     ogloszenia.current.scrollIntoView();
